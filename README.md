@@ -7,6 +7,17 @@ Time is needed for me to type in what I've done. Currently, only PS3 is up.
 Feel free to open an issue if you see any mistakes
 
 
+## Progress
+
+- PS1 (pending)
+- PS2 (pending)
+- PS3 (done)
+- PS4 **(in progress)**
+- PS5 (pending)
+- PS6 (pending)
+- PS7 (pending)
+- PS8 (pending)
+
 ## Copyright
 
 All questions in the problem sets are copyright to MIT OpenCourseWare.
