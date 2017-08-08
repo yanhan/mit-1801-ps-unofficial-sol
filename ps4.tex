@@ -153,4 +153,31 @@ Then $f(x) = -(-x) - ln(1 - (-x)) = x - ln(1 + x) \geq 0$ for $0 \leq -x < 1$ or
 
 Hence $ln(1 + x) \leq x$ for $-1 < x \leq 0$
 
+
+\begin{tcolorbox}
+  \textbf{Q2a)} Do 5.3/68
+\end{tcolorbox}
+
+I do not have the textbook. Skipped.
+
+
+\begin{tcolorbox}
+  \textbf{Q2b)} Show that both of the following integrals are correct, and explain.
+
+  \begin{align*}
+    \int tan x\ sec^2 x\ dx = (1/2) tan^2 x; \int tan x\ sec^2 x\ dx = (1/2) sec^2 x
+  \end{align*}
+\end{tcolorbox}
+
+Let $u = tan\ x$. We have
+
+\begin{align*}
+  \int tan x\ sec^2 dx &= \int (sec^2 x)\ tan x\ dx \\
+                       &= \int u'\ u\ du \\
+                       &= \frac{1}{2} u^2 + c \\
+                       &= \frac{1}{2} tan^2 x + c
+\end{align*}
+
+Now we want to prove that $\int tan x\ sec^2 x\ dx = (1/2) sec^2 x$. Let $u = sec\ x$. Then $\int u' \ u\ du = \frac{1}{2}u^2 + c = \frac{1}{2} sec^2 x + c$
+
 \end{document}
