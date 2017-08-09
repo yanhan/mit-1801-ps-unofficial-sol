@@ -249,4 +249,29 @@ For pressure at top of Mt Everest, we have $\Delta h = 10$. Hence
 
 which is totally incorrect because $\Delta h = 10$ is much bigger than $0$ and causes the approximation to be wildly inaccurate.
 
+
+\begin{tcolorbox}
+  \textbf{Q5)} Calculate $\int_{0}^{1} e^x dx$ using lower Riemann sums. (You will need to sum a geometric series to get a usable formula for the Riemann sum. To take the limit of Riemann sums, you will need to evaluate $\lim\limits_{n \to \infty} n(e^{1/n} - 1)$, which can be done using the standard linear approximation to the exponential function.)
+\end{tcolorbox}
+
+\begin{align*}
+  \int_{0}^{1} e^x dx &= \lim\limits_{n \to \infty} \sum_{k=0}^{n-1} e^{\frac{k}{n}} \frac{1}{n}\\
+                      &= \lim\limits_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} e^{\frac{k}{n}}\\
+                      &= \lim\limits_{n \to \infty} \frac{1}{n} \sum_{k=0}^{n-1} (e^{\frac{1}{n}})^k\\
+                      &= \lim\limits_{n \to \infty} \frac{1}{n} \cdot \frac{1 - (e^{\frac{1}{n}})^n}{1 - e^{\frac{1}{n}}}\\
+                      &= \lim\limits_{n \to \infty} \frac{1}{n} \cdot \frac{1 - e}{1 - e^\frac{1}{n}}\\
+                      &= \lim\limits_{n \to \infty} \frac{1 - e}{n(1 - e^{\frac{1}{n}})}
+\end{align*}
+
+The linear approximation to $e^x$ near $x = 0$ is $e^0 + e^0 x = 1 + x$. Since $n \rightarrow \infty, \frac{1}{n} \rightarrow 0$ and $e^{\frac{1}{n}} \approx 1 + \frac{1}{n}$. Then
+
+\begin{align*}
+  \int_{0}^{1} e^x dx &= \lim\limits_{n \to \infty} \frac{1 - e}{n(1 - e^{\frac{1}{n}})}\\
+                      &\approx \lim\limits_{n \to \infty} \frac{1 - e}{n(1 - (1 + \frac{1}{n}))}\\
+                      &= \lim\limits_{n \to \infty} \frac{1 - e}{n(-\frac{1}{n})}\\
+                      &= \lim\limits_{n \to \infty} \frac{1 - e}{-1}\\
+                      &= \lim\limits_{n \to \infty} e - 1\\
+                      &= e - 1
+\end{align*}
+
 \end{document}
