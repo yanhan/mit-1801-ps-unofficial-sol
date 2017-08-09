@@ -12,7 +12,7 @@ Feel free to open an issue if you see any mistakes
 - PS1 (pending)
 - PS2 (pending)
 - PS3 (done)
-- PS4 **(in progress)**
+- PS4 (done)
 - PS5 (pending)
 - PS6 (pending)
 - PS7 (pending)
