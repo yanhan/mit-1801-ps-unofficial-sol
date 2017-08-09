@@ -7,6 +7,7 @@
 % Allows us to color rows / cols of a table.
 % See https://texblog.org/2011/04/19/highlight-table-rowscolumns-with-color/
 \usepackage{color, colortbl}
+\graphicspath{{images/ps4/}}
 
 \usepackage{hyperref}
 
@@ -273,5 +274,222 @@ The linear approximation to $e^x$ near $x = 0$ is $e^0 + e^0 x = 1 + x$. Since $
                       &= \lim\limits_{n \to \infty} e - 1\\
                       &= e - 1
 \end{align*}
+
+
+\begin{tcolorbox}
+  \textbf{Q6) More about the hypocycloid} We use differential equations to find the curve with the property that the potrion of its tangent line in the first quadrant has fixed length.\\
+  \\
+  a) Suppose that a line through the point $(x_0, y_0)$ has slope $m_0$ and that the point is in the first quadrant. Let $L$ denote the length of the portion of the line in the first quadrant. Calculate $L^2$ in terms of $x_0, y_0$ and $m_0$. (Do not expand or simplify.)
+\end{tcolorbox}
+
+Equation of tangent line is given by $y - y_0 = m_0(x - x_0)$. When $x = 0$
+
+\begin{align*}
+  y - y_0 &= m_0(0 - x_0)\\
+  y &= -m_0 x_0 + y_0
+\end{align*}
+
+When $y = 0$,
+
+\begin{align*}
+  0 - y_0 &= m_0(x - x_0)\\
+  -\frac{y_0}{m_0} &= x - x_0\\
+  x &= x_0 - \frac{y_0}{m_0}
+\end{align*}
+
+Substituting the above equations for $x$ and $y$ into $L^2 = x^2 + y^2$, we have
+
+\begin{align*}
+  L^2 &= x^2 + y^2\\
+      &= (x_0 - \frac{y_0}{m_0})^2 + (-m_0 x_0 + y_0)^2
+\end{align*}
+
+
+\begin{tcolorbox}
+  \textbf{Q6b)} Suppose that $y = f(x)$ is a graph on $0 \leq x \leq L$ satisfying $f(0) = L$ and $f(L) = 0$ and such that the portion of each tangent line to the graph in the first quadrant has the same length $L$. Find the differential equation that $f$ satisfies. Express it in terms of $L, x, y$ and $y' = dy/dx$. (Hints: This requires only thought, not computation. Note that $y = f(x), y' = f'(x)$. Don't take square roots, the expression using $L^2$ is much easier to use. Don't expand or simplify; that would make things harder in the next step.)
+\end{tcolorbox}
+
+\begin{center}
+  \includegraphics[]{q6b.jpg}
+\end{center}
+
+Apologies for the poor quality image.
+
+Let the x-intercept of the tangent line be point $d$. Given a point $(x, y)$ on the tangent line, we have
+
+\begin{align*}
+  \frac{dy}{dx} &= \frac{0 - y}{d - x}\\
+  d - x &= \frac{-y}{\frac{dy}{dx}}\\
+  d &= x - \frac{y}{\frac{dy}{dx}}
+\end{align*}
+
+We also see from the diagram that $(\Delta L)^2 = y^2 + (d - x)^2 = y^2 + (x - \frac{y}{\frac{dy}{dx}} - x)^2 = y^2 + (-\frac{y}{\frac{dy}{dx}})^2 = y^2 + (\frac{y}{\frac{dy}{dx}})^2$
+
+The y-intercept of the graph is $y - x \cdot \frac{dy}{dx}$. This is also the height of the triangle in the diagram. Using similar triangles, we have
+
+\begin{align*}
+  \frac{y}{\Delta L} &= \frac{y - x \cdot \frac{dy}{dx}}{L}\\
+  (\frac{y}{\Delta L})^2 &= (\frac{y - x \cdot \frac{dy}{dx}}{L})^2
+\end{align*}
+
+Substituting $(\Delta L)^2 = y^2 + (\frac{y}{\frac{dy}{dx}})^2$ which we got above:
+
+\begin{align*}
+  (\frac{y}{\Delta L})^2 &= (\frac{y - x \cdot \frac{dy}{dx}}{L})^2\\
+  \frac{y^2}{y^2 + \frac{y^2}{(\frac{dy}{dx})^2}} &= (\frac{y - x \cdot \frac{dy}{dx}}{L})^2\\
+  L^2 y^2 &= (y - x \cdot \frac{dy}{dx})^2 (y^2  + \frac{y^2}{(\frac{dy}{dx})^2})
+\end{align*}
+
+
+\begin{tcolorbox}
+  \textbf{Q6c)} Differentiate the equation in part (b) with respect to $x$. Simplify and write in the form\\
+  \begin{center}
+    (something)$(xy' - y)y'' = 0$
+  \end{center}
+
+  \ \\
+  (This starts out looking horrendous, but simplifies considerably.)
+\end{tcolorbox}
+
+\begin{align*}
+  L^2 y^2 &= (y - x \cdot \frac{dy}{dx})^2 (y^2  + \frac{y^2}{(\frac{dy}{dx})^2})\\
+  L^2 y^2 &= (y^2 - 2xy \cdot \frac{dy}{dx} + x^2 \cdot (\frac{dy}{dx})^2) (y^2 + \frac{y^2}{(\frac{dy}{dx})^2})\\
+          &= y^4 + \frac{y^4}{(\frac{dy}{dx})^2} - 2xy^3 \cdot \frac{dy}{dx} - \frac{2xy^3}{\frac{dy}{dx}} + x^2y^2 \cdot (\frac{dy}{dx})^2 + x^2 y^2
+\end{align*}
+
+Differentiate implicitly with respect to $x$,
+
+\begin{align*}
+  L^2 \cdot 2y \cdot y' &= 4y^3 \cdot y' + \frac{4y^3(y')(y')^2 - y^4 \cdot 2y'(y'')}{(y')^4} - 2y^3y' - 6xy^2(y')^2 - 2xy^3y'' - \frac{2y^3y' + 6xy^2(y')^2 - 2xy^3y''}{(y')^2}\\
+                        &\ \ \ + 2xy^2(y')^2 + 2x^2y(y')^3 + 2x^2y^2y'y'' + 2xy^2 + 2x^2yy'\\
+                        &= 2y^3y' + \frac{4y^3(y')^3 - 2y^4y'y''}{(y')^4} - 4xy^2(y')^2 - 2xy^3y'' - \frac{2y^3y' + 6xy^2(y')^2 - 2xy^3y''}{(y')^2} + 2x^2y(y')^3\\
+                        &\ \ \ + 2x^2y^2y'y'' + 2xy^2 + 2x^2yy'\\
+                        &= \frac{1}{(y')^4}(2y^3(y')^5 + 4y^3(y')^3 - 2y^4y'y'' - 4xy^2(y')^6 - 2xy^3(y')^4y'' - 2y^3(y')^3 - 6xy^2(y')^4 + 2xy^3(y')^2y''\\
+                        &\ \ \ + 2x^2y(y')^7 + 2x^2y^2(y')^5y'' + 2xy^2(y')^4 + 2x^2y(y')^5)
+\end{align*}
+\begin{align*}
+  L^2 \cdot 2y \cdot y' \cdot (y')^4 &= 2y^3(y')^5 + 4y^3(y')^3 - 2y^4y'y'' - 4xy^2(y')^6 - 2xy^3(y')^4y'' - 2y^3(y')^3 - 6xy^2(y')^4 + 2xy^3(y')^2y''\\
+                        &\ \ \ + 2x^2y(y')^7 + 2x^2y^2(y')^5y'' + 2xy^2(y')^4 + 2x^2y(y')^5
+\end{align*}
+
+In part (a), we got the result $L^2 = (x_0 - \frac{y_0}{m_0})^2 + (-m_0 x_0 + y_0)^2$ for any point $(x_0, y_0)$ on the tangent. Rewriting $m_0$ as $y'$, this becomes $L^2 = (x_0 - \frac{y_0}{y'})^2 + (-y' x_0 + y_0)^2$. Substituting the point $x_0 = x, y_0 = y$ for some point $(x, y)$ on the tangent line, this becomes $L^2 = (x - \frac{y}{y'})^2 + (-y' x + y)^2 = (y - xy')^2 + (x - \frac{y}{y'})^2$. Substituting that into $L^2 \cdot 2y \cdot y' \cdot (y')^4$, we have
+
+\begin{align*}
+  L^2 \cdot 2y \cdot y' \cdot (y')^4 &= ((y - xy')^2 + (x - \frac{y}{y'})^2) \cdot 2y \cdot y' \cdot (y')^4\\
+                                     &= 2(y^2 - 2xyy' + x^2(y')^2 + x^2 - \frac{2xy}{y'} + \frac{y^2}{(y')^2}) \cdot y \cdot (y')^5\\
+                                     &= 2y^3(y')^5 - 4xy^2(y')^6 + 2x^2y(y')^7 + 2x^2y(y')^5 - 4xy^2(y')^4 + 2y^3(y')^3
+\end{align*}
+
+Then
+\begin{align*}
+  L^2 \cdot 2y \cdot y' \cdot (y')^4 &= 2y^3(y')^5 + 4y^3(y')^3 - 2y^4y'y'' - 4xy^2(y')^6 - 2xy^3(y')^4y'' - 2y^3(y')^3 - 6xy^2(y')^4 + 2xy^3(y')^2y''\\
+                        &\ \ \ + 2x^2y(y')^7 + 2x^2y^2(y')^5y'' + 2xy^2(y')^4 + 2x^2y(y')^5
+\end{align*}
+
+becomes
+\begin{align*}
+  &2y^3(y')^5 - 4xy^2(y')^6 + 2x^2y(y')^7 + 2x^2y(y')^5 - 4xy^2(y')^4 + 2y^3(y')^3 \\
+  &= 2y^3(y')^5 + 4y^3(y')^3 - 2y^4y'y'' - 4xy^2(y')^6 - 2xy^3(y')^4y'' - 2y^3(y')^3 - 6xy^2(y')^4 + 2xy^3(y')^2y''\\
+  &\ \ \ + 2x^2y(y')^7 + 2x^2y^2(y')^5y'' + 2xy^2(y')^4 + 2x^2y(y')^5
+\end{align*}
+
+which simplifies to
+
+\begin{align*}
+  0 = -2y^4y'y'' - 2xy^3(y')^4y'' + 2xy^3(y')^2y'' + 2x^2y^2(y')^5y''\\
+  (y^3y' + xy^2(y')^4)(xy' - y)y'' = 0
+\end{align*}
+
+
+\begin{tcolorbox}
+  \textbf{Q6d)} Show that one solution to the equation in part (c) is $x^{2/3} + y^{2/3} = L^{2/3}$. What about two other possibilities, namely, those solving $y'' = 0$ and $xy' - y = 0$?
+\end{tcolorbox}
+
+In part (c), we derived $(y^3y' + xy^2(y')^4)(xy' - y)y'' = 0$. Let's solve for $y^3y' + xy^2(y')^4 = 0$
+
+\begin{align*}
+  y^3y' + xy^2(y')^4 &= 0\\
+  y^3y' &= -xy^2(y')^4\\
+  y^3 &= -xy^2(y')^3\\
+  -y^3 &= xy^2(y')^3\\
+  -y &= x^{1/3}y^{2/3}y'\\
+  -y &= x^{1/3}y^{2/3}\frac{dy}{dx}\\
+  x^{-1/3} &= -y^{-1/3}\frac{dy}{dx}\\
+  x^{-1/3} dx &= -y^{-1/3} dy\\
+  \int x^{-1/3} dx &= \int -y^{-1/3} dy\\
+  \frac{3}{2} x^{2/3} &= -\frac{3}{2} y^{2/3} + c\\
+  \frac{3}{2} x^{2/3} + \frac{3}{2} y^{2/3} &= c\\
+  x^{2/3} + y^{2/3} &= \frac{2}{3}c
+\end{align*}
+
+Now we have to prove that $c = \frac{3}{2}L^{2/3}$ for $x^{2/3} + y^{2/3} = \frac{2}{3}c = \frac{2}{3} \cdot \frac{3}{2}L^{2/3} = L^{2/3}$.
+
+In solving for $y^3y' + xy^2(y')^4 = 0$, we had a step $x^{-1/3} = -y^{-1/3}\frac{dy}{dx}$. From that, we derive $\frac{dy}{dx} = \frac{x^{-1/3}}{-y^{-1/3}} = -x^{-1/3}y^{1/3}$. Or equivalently, $y' = -x^{-1/3}y^{1/3}$.
+
+In part (c), we also showed that $L^2 = (y - xy')^2 + (x - \frac{y}{y'})^2$. We will expand that and then substitute $y' = -x^{-1/3}y^{1/3}$:
+
+\begin{align*}
+  L^2 &= (y - xy')^2 + (x - \frac{y}{y'})^2\\
+      &= x^2 - 2xy\frac{1}{y'} + \frac{y^2}{(y')^2} + y^2 - 2xyy' + x^2(y')^2\\
+      &= x^2 - 2xy(-x^{1/3}y^{-1/3}) + y^2(x^{2/3}y^{-2/3}) + y^2 - 2xy(-x^{-1/3}y^{1/3}) + x^2(x^{-2/3}y^{2/3})\\
+      &= x^2 + 2x^{4/3}y^{2/3} + x^{2/3}y^{4/3} + y^2 + 2x^{2/3}y^{4/3} + x^{4/3}y^{2/3}\\
+      &= x^2 + y^2 + 3x^{4/3}y^{2/3} + 3x^{2/3}y^{4/3}\\
+      &= (x^{2/3} + y^{2/3})(x^{4/3} + y^{4/3}) + 2x^{4/3}y^{2/3} + 2x^{2/3}y^{4/3}\\
+      &= (x^{2/3} + y^{2/3})(x^{4/3} + y^{4/3}) + 2(x^{2/3}y^{2/3})(x^{2/3} + y^{2/3})\\
+      &= (x^{2/3} + y^{2/3})(x^{4/3} + y^{4/3} + 2x^{2/3}y^{2/3})\\
+      &= (x^{2/3} + y^{2/3})(x^{2/3} + y^{2/3})^2\\
+      &= (x^{2/3} + y^{2/3})^3
+\end{align*}
+
+Hence $x^{2/3} + y^{2/3} = L^{2/3} = \frac{2}{3}c$ and $c = \frac{3}{2} L^{2/3}$ as desired. And we also get $x^{2/3} + y^{2/3} = L^{2/3}$\\
+
+Another possibility in the equation $(y^3y' + xy^2(y')^4)(xy' - y)y'' = 0$ is that $y'' = 0$.
+
+\begin{align*}
+  y'' &= 0\\
+  \int y'' dy &= \int 0 dx\\
+  y' &= c\\
+  \int y' dy &= \int c dx\\
+  y &= cx + d
+\end{align*}
+
+for some constants $c, d$.
+
+For the problem to be meaningful, the length tangent line, $L$, must be positive. Hence some part of the tangent line has to lie in the first quadrant. We know that for a line of the form $y = cx + d$, the tangent line to any point on the line must be the line itself. Hence the part of the tangent line that lies in the is precisely the part of the $y = cx + d$ itself that lies in the first quadrant, and it must be of length $L$.
+
+Let the y-intercept of the line be $d$. We assume $L$ to be finite, so the line $y = cx + d$ must be decreasing and hence its y-intercept $d > 0$ and its gradient $c < 0$. Its x-intercept can be obtained by equating $y = 0$ and solving:
+
+\begin{align*}
+  0 &= cx + d\\
+  x &= -\frac{d}{c}
+\end{align*}
+
+We must have that $L^2 = d^2 + (-\frac{d}{c})^2$. Hence
+
+\begin{align*}
+  L^2 &= d^2 + (-\frac{d}{c})^2\\
+  L^2 &= d^2 + + \frac{d^2}{c^2}\\
+  d^2 - L^2 &= -\frac{d^2}{c^2}\\
+  c^2 &= -\frac{d^2}{d^2 - L^2}\\
+  c^2 &= \frac{d^2}{L^2 - d^2}\\
+  c^2 &= \pm \sqrt{\frac{d^2}{L^2 - d^2}}
+\end{align*}
+
+Since $c < 0$, we must have $c^2 = -\sqrt{\frac{d^2}{L^2 - d^2}}$. Then $y = -\sqrt{\frac{d^2}{L^2 - d^2}}x + d$ gives the equation for all such lines for a fixed $L$ and any $d > 0$.\\
+
+Another possibility in the equation $(y^3y' + xy^2(y')^4)(xy' - y)y'' = 0$ is that $xy' - y = 0$.
+
+\begin{align*}
+  xy' - y &= 0\\
+  x\frac{dy}{dx} - y &= 0\\
+  x\frac{dy}{dx} &= y\\
+  \frac{1}{y}dy &= \frac{1}{x}dx\\
+  \int \frac{1}{y}dy &= \int \frac{1}{x}dx\\
+  ln|y| &= ln|x| + c
+\end{align*}
+
+for some constant $c$. Since $x, y > 0$ (because we are only concerned about the part of the graph in the first quadrant), $ln|y| = ln|x| + c = ln(y) + ln(x) + c$ and we have $y = e^{ln(x) + c} = e^c \cdot x$ for some constant $c$.
+
+We see that lines of the form $y = e^c \cdot x$ pass through the origin. Furthermore, for any $c$, we have $e^c > 0$. Hence $y = e^c \cdot x$ is an increasing function that is linear in $x$. Since the tangent line to any point on the line is the line itself and it is an increasing function that starts from $y = 0$ at $x = 0$, its length in the first quadrant is unbounded. Hence this is not a meaningful case.
 
 \end{document}
