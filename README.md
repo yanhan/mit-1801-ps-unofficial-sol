@@ -10,7 +10,7 @@ Feel free to open an issue if you see any mistakes
 ## Progress
 
 - PS1 (pending)
-- PS2 (pending)
+- PS2 (in progress)
 - PS3 (done)
 - PS4 (done)
 - PS5 (pending)
