@@ -13,6 +13,12 @@ def _target(x):
 def _gradient(x):
     return -4 * x / (x * x - 1)**2
 
+def _odd_fn(x):
+    return -2 * x / (x * x - 1)
+
+def _odd_gradient(x):
+    return 2 * (x * x + 1) / (x * x - 1)**2
+
 _NR_POINTS = 1000
 _MAIN_PLOT_COLOR = "blue"
 _GRADIENT_PLOT_COLOR = "green"
@@ -47,6 +53,26 @@ def _main():
     derivative_plot_patch = mpatches.Patch(color=_GRADIENT_PLOT_COLOR, label="derivative",)
     plt.legend(handles=[main_plot_patch, derivative_plot_patch,])
     plt.savefig("q1_even.png", dpi=96,)
+
+    vec_odd_fn = np.vectorize(_odd_fn)
+    vec_odd_gradient = np.vectorize(_odd_gradient)
+    plt.clf()
+    axes = plt.gca()
+    axes.set_xlim([x_left_limit, x_right_limit])
+    axes.set_ylim([y_lower_limit, y_upper_limit])
+    for x_part in all_x_parts:
+        plt.plot(x_part, vec_odd_fn(x_part), color=_MAIN_PLOT_COLOR,)
+        plt.plot(x_part, vec_odd_gradient(x_part), color=_GRADIENT_PLOT_COLOR,)
+    plt.axhline(y=0, color="black")
+    plt.axvline(x=-1, color="gray", linestyle="dashed",)
+    plt.axvline(x=1, color="gray", linestyle="dashed",)
+    plt.title("Graph of y = (-2x) / (x^2 - 1) and its derivative")
+    plt.xlabel("x")
+    plt.ylabel("y")
+    main_plot_patch = mpatches.Patch(color=_MAIN_PLOT_COLOR, label="main plot",)
+    derivative_plot_patch = mpatches.Patch(color=_GRADIENT_PLOT_COLOR, label="derivative",)
+    plt.legend(handles=[main_plot_patch, derivative_plot_patch,])
+    plt.savefig("q1_odd.png", dpi=96,)
 
 if __name__ == "__main__":
     _main()
