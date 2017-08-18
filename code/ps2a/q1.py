@@ -46,7 +46,7 @@ def _main():
     plt.axhline(y=0, color="black")
     plt.axvline(x=-1, color="gray", linestyle="dashed",)
     plt.axvline(x=1, color="gray", linestyle="dashed",)
-    plt.title("Graph of y = (x^2 + 1) / (x^2 - 1)")
+    plt.title("Graph of y = (x^2 + 1) / (x^2 - 1) and its derivative")
     plt.xlabel("x")
     plt.ylabel("y")
     main_plot_patch = mpatches.Patch(color=_MAIN_PLOT_COLOR, label="main plot",)
