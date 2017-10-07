@@ -9,6 +9,7 @@
 \usepackage{color, colortbl}
 
 \usepackage{hyperref}
+\graphicspath{{images/ps2b/}}
 
 \leftmargin=0.25in
 \oddsidemargin=0.25in
@@ -35,6 +36,21 @@
   \\
   a) Consider a spherical cap which is the portion of the surface of the sphere above horizontal plane that slices the sphere at or above its center. Find the area of the cap as a function of $R$ and $r$. Do this by finding first the formula for the height $h$ of the spherical cap in terms of $r$ and $R$. (This height is the vertical distance from the horizontal slicing plane to the North Pole.) Then use your formula for $h$ and the formula above for the area of spherical sections.
 \end{tcolorbox}
+
+\begin{center}
+  \includegraphics[scale=0.8]{q1atx.jpg}
+\end{center}
+
+In the above diagram, we see that the distance between the 2 horizontal slicing planes is $R - h$, where $h$ is the height of the spherical cap. The insight is that, the distance from the center of the sphere to any point on the circumference is $R$. We form a right triangle using this line and the line with the radius $r$ of the spherical cap.
+
+By the Pythagorean formula, $(R - h)^2 = R^2 - r^2$. Hence
+
+\begin{align*}
+  R - h &= \sqrt{R^2 - r^2}\\
+  h &= R - \sqrt{R^2 - r^2}
+\end{align*}
+
+Then the area of the spherical cap is $2 \pi h R = 2 \pi (R - \sqrt{R^2 - r^2}) R = 2 \pi R (R - \sqrt{R^2 - r^2})$
 
 
 \begin{tcolorbox}
