@@ -38,7 +38,7 @@
 \end{tcolorbox}
 
 \begin{center}
-  \includegraphics[scale=0.8]{q1atx.jpg}
+  \includegraphics[scale=0.8]{q1a.jpg}
 \end{center}
 
 In the above diagram, we see that the distance between the 2 horizontal slicing planes is $R - h$, where $h$ is the height of the spherical cap. The insight is that, the distance from the center of the sphere to any point on the circumference is $R$. We form a right triangle using this line and the line with the radius $r$ of the spherical cap.
@@ -56,6 +56,36 @@ Then the area of the spherical cap is $2 \pi h R = 2 \pi (R - \sqrt{R^2 - r^2}) 
 \begin{tcolorbox}
   \textbf{Q1b)} Express the formula for the area of a spherical cap in terms of $R^2$ and $r / R$. (This is natural because the proportional scaling $cr$ and $cR$ changes the area by the factor $c^2$.) Then use the linear and quadratic approximations to $(1 + x)^{1/2}$ near $x = 0$ to find a good and an even better approximation to the area of the spherical cap, appropriate when the ratio $r / R$ is small. (Hint: What is $x$?) Simplify your answers as far as possible: the approximation corresponding to the linear approximation to $(1 + x)^{1/2}$ should be very familiar.
 \end{tcolorbox}
+
+In part (a), we see that the area of the spherical cap is $2 \pi R (R - \sqrt{R^2 - r^2})$. This can also be expressed as
+
+\begin{align*}
+  2 \pi R (R - \sqrt{R^2 - r^2}) &= 2 \pi R (R - \sqrt{R^2 (1 - \frac{r^2}{R^2})}) \\
+                                 &= 2 \pi R (R - R \sqrt{1 - \frac{r^2}{R^2}}) \\
+                                 &= 2 \pi R^2 (1 - \sqrt{1 - \frac{r^2}{R^2}}) \\
+\end{align*}
+
+When $\frac{r}{R}$ is small, $\frac{r^2}{R^2} \approx 0$. Let $x = -\frac{r^2}{R^2}$. We are going to use the linear approximation of $(1 + x)^{1/2}$. Let $f(x) = (1 + x)^{1/2}$. Then $f(0) = (1 + 0)^{1/2} = 1$ and $f'(x) = \frac{1}{2} (1 + x)^{-1/2}$ and $f'(0) = \frac{1}{2}(1 + 0)^{-1/2} = \frac{1}{2}$.
+
+Hence the linear approximation to $(1 + x)^{1/2} = f(0) + f'(0)(x - 0) = 1 + \frac{1}{2}x$ and the linear approximation to $\sqrt{1 - \frac{r^2}{R^2}}$ is thus $1 + \frac{1}{2}(-\frac{r^2}{R^2}) = 1 - \frac{r^2}{2R^2}$
+
+Linear approximation to area of spherical cap is thus $2 \pi R^2 (1 - (1 - \frac{r^2}{2R^2})) = 2 \pi R^2 (\frac{r^2}{2R^2}) = \pi r^2$
+
+For quadratic approximation to $\sqrt{1 - \frac{r^2}{R^2}}$, we need to compute the 2nd derivative of $f(x) = (1 + x)^{1/2}$, which is $f''(x) = -\frac{1}{4}(1 + x)^{-3/2}$. Now, $f''(0) = -\frac{1}{4}(1 + 0)^{-3/2} = -\frac{1}{4}$
+
+Hence, quadratic approximation to $\sqrt{1 - \frac{r^2}{R^2}}$ is:
+
+\begin{align*}
+  1 + \frac{1}{2}(-\frac{r^2}{R^2} - 0) - \frac{\frac{1}{4}}{2}(-\frac{r^2}{R^2} - 0)^2 &= 1 - \frac{r^2}{2R^2} - \frac{r^4}{8R^4}
+\end{align*}
+
+Quadratic approximation to area of spherical cap is
+
+\begin{align*}
+  2 \pi R^2 (1 - (1 - \frac{r^2}{2R^2} - \frac{r^4}{8R^4})) &= 2 \pi R^2 (\frac{r^2}{2R^2} + \frac{r^4}{8R^4}) \\
+                                                            &= \pi r^2 + \pi \frac{r^4}{4R^2}
+\end{align*}
+
 
 \begin{tcolorbox}
   \textbf{Q1c)} The following problem appeared on a middle school math contest exam. The numbers have been changed to protect the innocent. Consider a golf ball that is 3 centimeters in diameter with 100 hemispherical dimples of diameter 3 millimeters. (Note that this is not a realistic golf ball because the dimples are too deep). Find the area of the golf ball rounded to the nearest $1/100$ of a square centimeter using the approximation $\pi \approx 3.14$. (The students were given three minutes. We are spending more time on it.) \\
