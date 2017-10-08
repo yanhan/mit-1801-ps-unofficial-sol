@@ -10,13 +10,14 @@ Feel free to open an issue if you see any mistakes
 ## Progress
 
 - PS1 (pending)
-- PS2 (in progress)
+- PS2 (done)
 - PS3 (done)
 - PS4 (done)
 - PS5 (pending)
 - PS6 (pending)
 - PS7 (pending)
 - PS8 (pending)
+
 
 ## Copyright
 
