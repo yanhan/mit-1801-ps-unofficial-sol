@@ -2,7 +2,7 @@
 
 Unofficial solutions to Problem Sets for [MIT 18.01 Single Variable Calculus](https://ocw.mit.edu/courses/mathematics/18-01-single-variable-calculus-fall-2006/) taught in Fall 2006 by Professor David Jerison.
 
-Time is needed for me to type in what I've done. Currently, only PS3 and PS4 are up.
+Time is needed for me to organize my answers and type in what I've done into Latex. See the [Progress section](#progress) for what has / hasn't been done.
 
 Feel free to open an issue if you see any mistakes
 
