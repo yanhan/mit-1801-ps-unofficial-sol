@@ -143,4 +143,78 @@ Hence quadratic approximation is more accurate.
   \textbf{Q2)} Draw the graph of $f(x) = 1/(1 + x^2)$ and, directly underneath, it with the graphs of $f'(x)$ and $f''(x)$. Label critical points and inflection points on the graph of $f$ with their coordinates. Draw vertical lines joining these special points of the graph of $f$ to the corresponding points on the graphs below.
 \end{tcolorbox}
 
+\begin{center}
+  \includegraphics[]{q2.jpg}
+\end{center}
+
+Now for the hard work. Let's compute $f'(x), f''(x), f'''(x)$ and $f''''(x)$.
+
+\begin{align*}
+  f'(x) = \frac{d}{dx} \frac{1}{1 + x^2} &= \frac{d}{dx}(1 + x^2)^{-1} \\
+                                         &= -1 \cdot (1 + x^2)^{-2} \cdot 2x \\
+                                         &= -\frac{2x}{(1 + x^2)^2} \\
+\\
+f''(x) &= \frac{d}{dx} (-\frac{2x}{(1 + x^2)^2}) \\
+       &= \frac{d}{dx} \frac{-2x}{(1 + x^2)^2} \\
+       &= \frac{-2(1 + x^2)^2 - (-2x)\cdot 2(1 + x^2)(2x)}{((1 + x^2)^2)^2} \\
+       &= \frac{-2(1 + x^2)^2 + 8x^2 (1 + x^2)}{(1 + x^2)^4} \\
+       &= \frac{-2(1 + x^2) + 8x^2}{(1 + x^2)^3} \\
+       &= \frac{-2 - 2x^2 + 8x^2}{(1 + x^2)^3} \\
+       &= \frac{6x^2 - 2}{(1 + x^2)^3} \\
+\\
+f'''(x) &= \frac{d}{dx} \frac{6x^2 - 2}{(1 + x^2)^3} \\
+        &= \frac{12x (1 + x^2)^3 - (6x^2 - 2)3(1 + x^2)^2 (2x)}{((1 + x^2)^3)^2} \\
+        &= \frac{12x (1 + x^2)^3 - (36x^3 - 12x)(1 + x^2)^2}{(1 + x^2)^6} \\
+        &= \frac{12x (1 + x^2) - 36x^3 + 12x}{(1 + x^2)^4} \\
+        &= \frac{12x + 12x^3 - 36x^3 + 12x}{(1 + x^2)^4} \\
+        &= \frac{-24x^3 + 24x}{(1 + x^2)^4} \\
+\\
+f''''(x) &= \frac{d}{dx} \frac{-24x^3 + 24x}{(1 + x^2)^4} \\
+         &= \frac{(-72x^2 + 24) (1 + x^2)^4 - (-24x^3 + 24x)4(1 + x^2)^3 2x}{((1 + x^2)^4)^2} \\
+         &= \frac{(-72x^2 + 24) (1 + x^2)^4 - (-192x^4 + 192x^2)(1 + x^2)^3}{(1 + x^2)^8} \\
+         &= \frac{(-72x^2 + 24) (1 + x^2) + 192x^4 - 192x^2}{(1 + x^2)^5} \\
+         &= \frac{-72x^2 - 72x^4 + 24 + 24x^2 + 192x^4 - 192x^2}{(1 + x^2)^5} \\
+         &= \frac{120x^4 - 240x^2 + 24}{(1 + x^2)^5}
+\end{align*}
+
+\subsection*{For the graph of $f(x) = \frac{1}{1 + x^2}$}
+
+There are no discontinuities for $f(x) = \frac{1}{1 + x^2}$. There are also no x-intercepts. In fact, this graph is always positive because the numerator $1$ is positive and the denominator $1 + x^2$ is always positive so dividing the numerator by the denominator is also always positive.
+
+For the y-intercept, $x = 0$. In this case, $y = \frac{1}{1 + 0^2} = 1$ so $(0, 1)$ is the y-intercept.
+
+Now for the critical points of $f(x) = \frac{1}{1 + x^2}$. These occur when $f'(x) = -\frac{2x}{(1 + x^2)^2} = 0$, or equivalently when $-2x = 0$ or $x = 0$. At $x = 0$, $f(x) = \frac{1}{1 + 0^2} = 1$ so $(0, 1)$ is a critical point (this point also happens to be the y-intercept). Computing the second derivative, we see that $f''(0) = \frac{6(0)^2 - 2)}{(1 + 0^2)^3} = -2 < 0$ so $(0, 1)$ is a maximum point.
+
+For the inflection points of $f(x) = \frac{1}{1 + x^2}$. These occur when $f''(x) = \frac{6x^2 - 2}{(1 + x^2)^3} = 0$. Or equivalently, when $6x^2 - 2 = 0$ and $6x^2 = 2$ and $3x^2 = 1$ and $x^2 = \frac{1}{2}$ and $x = \pm \frac{1}{\sqrt{3}}$. At both these points, $f(x) = \frac{1}{1 + 1/3} = \frac{1}{4/3} = \frac{3}{4}$. Hence $(-\frac{1}{\sqrt{3}}, \frac{3}{4})$ and $(\frac{1}{\sqrt{3}}, \frac{3}{4})$ are the inflection points.
+
+Now for the limits. $\lim\limits_{x \rightarrow \pm\infty} \frac{1}{1 + x^2} = 0$
+
+With the above information, we can construct the graph of $f(x) = \frac{1}{1 + x^2}$
+
+\subsection*{For the graph of $f'(x) = -\frac{2x}{(1 + x^2)^2}$}
+
+The x-intercept occurs at $f'(x) = -\frac{2x}{(1 + x^2)^2} = 0$ which is when $x = 0$. So $(0, 0)$ is the x-intercept. For the y-intercept, $f'(0) = -\frac{2(0)}{(1 + 0^2)^2} = 0$ so $(0, 0)$ is also the y-intercept.
+
+The inflection points of $f(x)$ are at $x = \pm\frac{1}{\sqrt{3}}$. These now become the critical points of $f'(x)$. At $x = -\frac{1}{\sqrt{3}}, f'(x) = -\frac{2 (- 1 / \sqrt{3})}{(1 + (- 1 / \sqrt{3})^2)^2} = \frac{2 / \sqrt{3}}{(1 + 1/3)^2} = \frac{2}{\sqrt{3} \cdot \frac{16}{9}} = \frac{18}{16 \sqrt{3}} = \frac{9}{8 \sqrt{3}}$ so $(-\frac{1}{\sqrt{3}}, \frac{9}{8 \sqrt{3}})$ is a critical point. At $x = \frac{1}{\sqrt{3}}$, $f'(x) = -\frac{2 (1 / \sqrt{3})}{(1 + (1 / \sqrt{3})^2)^2} = -\frac{2}{\sqrt{3} (1 + 1/3)^2} = -\frac{2}{\sqrt{3} \cdot \frac{16}{9}} = -\frac{2 * 9}{\sqrt{3} \cdot 16} = -\frac{9}{8 \sqrt{3}}$ so $(\frac{1}{\sqrt{3}}, -\frac{9}{8 \sqrt{3}})$ is the other critical point. Now, $f'''(-\frac{1}{\sqrt{3}}) \approx -2.9228357377724787 < 0$ so $(-\frac{1}{\sqrt{3}}, \frac{9}{8 \sqrt{3}})$ is a maximum point. Similarly $f'''(\frac{1}{\sqrt{3}}) \approx 2.9228357377724787 > 0$ so $(\frac{1}{\sqrt{3}}, -\frac{9}{8 \sqrt{3}})$ is a minimum point.
+
+$\lim\limits_{x \rightarrow \pm\infty} -\frac{2x}{(1 + x^2)^2} = \lim\limits_{x \rightarrow \pm\infty} -\frac{2}{2(1 + x^2)2x} = 0$.
+
+Notice that at $x < 0$, $-2x > 0$ and $(1 + x^2)^2 > 0$ so $f'(x) = -\frac{2x}{(1 + x^2)^2} > 0$. At $x > 0, -2x < 0$ and $(1 + x^2)^2 > 0$ so $f'(x) = -\frac{2x}{(1 + x^2)^2} < 0$. The crossover point comes at $(0, 0)$.
+
+With the above information, we can construct the graph of $f'(x) = -\frac{2x}{(1 + x^2)^2}$
+
+\subsection*{For the graph of $f''(x) = \frac{6x^2 - 2}{(1 + x^2)^3}$}
+
+The inflection points of $f(x)$ are now the x-intercept of $f''(x)$. At $x = \pm \frac{1}{\sqrt{3}}$, $f''(x) = 0$.
+
+For the y-intercept, $f''(0) = \frac{6(0)^2 - 2}{(1 + 0^2)^3} = -2$ so $(0, -2)$ is the y-intercept.
+
+Notice also that the only $x$ terms are $x^2$ which have even powers. So this is an even function. Let us then consider the branch where $x > 0$ and we can construct the $x < 0$ case from there.
+
+For the critical points, let $f'''(x) = \frac{-24x^3 + 24x}{(1 + x^2)^4} = 0$. Then $-24x^3 + 24x = 0$ and $24x(- x^2 + 1) = 0$ so $x = 0$ or $-x^2 + 1 = 0$ which is equivalent to $x^2 - 1 = 0$ or $x = \pm 1$. At $x = 1$, $f''(1) = \frac{6(1)^2 - 2}{(1 + 1^2)^3} = \frac{4}{2^3} = \frac{1}{2}$ so $(1, \frac{1}{2})$ is a critical point. Using the second derivative of $f''(x)$ which is $f''''(x)$, we see that $f''''(\frac{1}{2}) = -9.33888 < 0$ so $(1, \frac{1}{2})$ is a maximum point. Similarly, $f''''(0) = 24 > 0$ so $(0, -2)$ is a minimum point.
+
+Now for the limits. $\lim\limits_{x \rightarrow \infty}\frac{6x^2 - 2}{(1 + x^2)^3} = \lim\limits_{x \rightarrow \infty}\frac{12x}{3(1 + x^2)^2 2x} = \lim\limits_{x \rightarrow \infty}\frac{2}{(1 + x^2)^2} = 0$.
+
+With the above information, we can construct the graph of $f''(x) = \frac{6x^2 - 2}{(1 + x^2)^3}$
+
 \end{document}
