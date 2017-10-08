@@ -7,6 +7,14 @@ Time is needed for me to type in what I've done. Currently, only PS3 and PS4 are
 Feel free to open an issue if you see any mistakes
 
 
+## Requesting help / solutions
+
+These are questions that I just can't seem to solve no matter what. Any help here will be appreciated.
+
+- PS2A Q4b
+- PS2B Q1d
+
+
 ## Progress
 
 - PS1 (pending)
