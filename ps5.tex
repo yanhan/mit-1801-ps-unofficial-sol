@@ -70,4 +70,56 @@ Graph:
   \includegraphics{q1a.jpg}
 \end{center}
 
+\begin{tcolorbox}
+  \textbf{Q1b)} The number of \emph{cooling degree days} is the sum of reach day of the difference between the average temeperature for that day and $65^{\circ}$. The number is used to estimate the demand for electricity for air conditioning. Draw a second graph of $y$ for the whole 50 days and shade in the region whose area represents the total number of degree days. Write a formula for this total area as the difference between $65 \cdot 50$ and a definite integral. Evaluate the definite integral using the fundamental theorem of calculus. (Alternatively, write the whole quantity as an integral expressing the area between curves as in Lecture 21, and 7.2.)
+\end{tcolorbox}
+
+\begin{center}
+  \includegraphics{q1b.jpg}
+\end{center}
+
+\begin{align*}
+  A &= \int_0^{50} 65 e^{\frac{1}{100}t} dt - 65 \cdot 50 \\
+  &= 6500e^{\frac{1}{100}t}\bigg]_0^{50} - 65 \cdot 50 \\
+  &= 6500 (e^{\frac{50}{100}} - e^{0}) - \frac{1}{2} \cdot 6500 \\
+  &= 6500 (e^{\frac{1}{2}} - \frac{3}{2}) \\
+  &\approx 966.688
+\end{align*}
+
+
+\begin{tcolorbox}
+  \textbf{Q1c)} (extra credit) Compute the definite integral in part (b) directly by evaluating a lower Riemann sum and taking a limit. Follow the procedure in Problem 5, PS4, but with different scale factors. This rather elaborate calculation shows how much time and effort we save every time we use the fundamental theorem and the change of variable formula in integrals.
+\end{tcolorbox}
+
+\begin{center}
+  $\int_0^{50} 65 e^{\frac{1}{100}t} dt = 65 \int_0^{50} e^{\frac{1}{100}t} dt$
+\end{center}
+
+Since $\frac{d}{dt} e^{\frac{1}{100}t} = \frac{1}{100} e^{\frac{1}{100}t} > 0$, $e^{\frac{1}{100}t}$ is an increasing function. Hence the left Riemann sum is the lower Riemann sum.
+
+Left Riemann sum of $\int_0^{50} e^{\frac{1}{100}t} dt = \sum\limits_{i=0}^{n-1} e^{\frac{1}{100}t_i} \Delta t$ where $\Delta t = \frac{50 - 0}{n} = \frac{50}{n}$
+
+\begin{align*}
+  \sum\limits_{i=0}^{n-1} e^{\frac{1}{100}(\frac{50i}{n})} \cdot \frac{50}{n} &= \frac{50}{n} \sum\limits_{i=0}^{n-1} e^{\frac{50i}{100n}} \\
+  &= \frac{50}{n} \sum\limits_{i=0}^{n-1} e^{\frac{i}{2n}} \\
+  &= \frac{50}{n} \cdot \frac{1(1 - (e^{\frac{1}{2n}})^n)}{1 - e^{\frac{1}{2n}}} \\
+  &= \frac{50}{n} \cdot \frac{1 - e^{\frac{1}{2}}}{1 - e ^{\frac{1}{2n}}}
+\end{align*}
+
+Use linear approximation for $1 - e^{\frac{1}{2n}}$.
+
+The linear approximation for $e^x = 1 + x$ for $x \approx 0$. Since $\frac{1}{2n} \rightarrow 0$ as $n \rightarrow +\infty$, then $1 - e^{\frac{1}{2n}} \approx 1 - (1 + \frac{1}{2n}) = -\frac{1}{2n}$
+
+Then $n(1 - e^{\frac{1}{2n}}) \approx n \cdot (- \frac{1}{2n}) \approx -\frac{1}{2}$. As $n \rightarrow +\infty$,
+
+\begin{align*}
+  \sum\limits_{i=0}^{n-1} e^{\frac{1}{100}(\frac{50i}{n})} \cdot \frac{50}{n} &\approx \lim_{n \rightarrow +\infty} \frac{50}{n} \cdot \frac{1 - e^{\frac{1}{2}}}{1 - e ^{\frac{1}{2n}}} \\
+  &\approx \lim_{n \rightarrow +\infty} \frac{50 \cdot (1 - e^{\frac{1}{2}})}{-\frac{1}{2}} \\
+  &= -100(1 - e^{\frac{1}{2}}) \\
+  &= 100e^{\frac{1}{2}} - 100
+\end{align*}
+
+Thus $\int_0^{50} e^{\frac{1}{100}t} dt \approx 100e^{\frac{1}{2}} - 100$ and $65 \int_0^{50} e^{\frac{1}{100}t} dt \approx 65(100e^{\frac{1}{2}} - 100) = 6500e^{\frac{1}{2}} - 6500$
+
+
 \end{document}
