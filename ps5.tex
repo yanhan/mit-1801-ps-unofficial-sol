@@ -122,4 +122,41 @@ Then $n(1 - e^{\frac{1}{2n}}) \approx n \cdot (- \frac{1}{2n}) \approx -\frac{1}
 Thus $\int_0^{50} e^{\frac{1}{100}t} dt \approx 100e^{\frac{1}{2}} - 100$ and $65 \int_0^{50} e^{\frac{1}{100}t} dt \approx 65(100e^{\frac{1}{2}} - 100) = 6500e^{\frac{1}{2}} - 6500$
 
 
+\begin{tcolorbox}
+  \textbf{Q2} Consider the function $f(x) = \int_0^{x} cos(t^2) dt$. There is no expression for $f(x)$ in terms of standard elementary functions. It is known as a Fresnel integral, along with the corresponding sine integral. \\
+  a) Draw a rough sketch of $cos(t^2)$, showing the first positive and negative zeros. What does the curve look like at $t = 0$? Is the function even or odd?
+\end{tcolorbox}
+
+\begin{center}
+  \includegraphics{q2a.jpg}
+\end{center}
+
+It is an even function.
+
+\begin{tcolorbox}
+  \textbf{Q2b)} List the critical points of $f(x)$ in the entire range $-\infty < x < \infty$. Which critical points are local maxima and which ones are local minima?
+\end{tcolorbox}
+
+$\frac{d}{dx}cos(x^2) = 2x(-sin(x^2)) = -2x\ sin(x^2)$
+
+At critical points, $-2x\ sin(x^2) = 0$. Either $x = 0$ or $sin(x^2) = 0$ which implies $x^2 = n\pi$ for some integer $n >= 0$, which means $x = \pm\sqrt{n\pi}$ for some integer $n >= 0$
+
+$\frac{d}{dx}-2x\ sin(x^2) = -2sin(x^2) - 4x^2cos(x^2)$
+
+At $x = 0$, $-2sin(x^2) = 4x^2cos(x^2)$. Either $x = 0$ or $-\frac{1}{2}tan(x^2) = x^2$.
+
+At $x = \pm\sqrt{n\pi}$ for odd $n > 0$, $-4(\pm\sqrt{n\pi})^2cos((\pm\sqrt{n\pi})^2) = -4n\pi cos(n\pi) = -4n\pi (-1) = 4n\pi > 0$. So minimum points are at $\pm\sqrt{n\pi}$ for odd $n > 0$.
+
+At $x = \pm\sqrt{n\pi}$ for even $n$, $-4(\pm\sqrt{n\pi})^2cos((\pm\sqrt{n\pi})^2) = -4n\pi cos(n\pi) = -4n \pi < 0$. So maximum points are at $x = \pm\sqrt{n\pi}$ for even $n > 0$.
+
+When $-4x^2cos(x^2) = 0$, either $x^2 = 0 (x = 0)$ or $cos(x^2) = 0$, which implies $x^2 = \frac{\pi}{2} + n\pi$ for any integer $n >= 0$. That is $\frac{\pi + 2n\pi}{2} = \pi(\frac{2n + 1}{2})$. Hence $x = \pm\sqrt{\pi(\frac{2n + 1}{2})}$ for any integer $n >= 0$.
+
+In summary:
+
+$x = \pm\sqrt{n\pi}$ for odd integer $n > 0$ are minimum points. \\
+$x = \pm\sqrt{n\pi}$ for even integer $n > 0$ are maximum points. \\
+$x = 0$ is inflection point. \\
+$x = \pm\sqrt{\pi(\frac{2n+1}{2})}$ for any integer $n >= 0$ are inflection points.
+
+
 \end{document}
