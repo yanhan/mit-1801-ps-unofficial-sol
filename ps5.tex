@@ -159,4 +159,41 @@ $x = 0$ is inflection point. \\
 $x = \pm\sqrt{\pi(\frac{2n+1}{2})}$ for any integer $n >= 0$ are inflection points.
 
 
+\begin{tcolorbox}
+  \textbf{Q2c)} Sketch the graph of $f$ on the interval $-2 <= x <= 2$, with labels for the critical points \textbf{and inflection points}. (The drawing should be qualitatively correct, but just estimate the values of $f$ at the labelled points.)
+\end{tcolorbox}
+
+Skipped.
+
+
+\begin{tcolorbox}
+  \textbf{Q2d)} Estimate $f(0.1)$ to six decimal places.
+\end{tcolorbox}
+
+$f(0.1) = \int_0^{0.1} cos(t^2) dt$
+
+Compute fourth derivative of $cos(t^2)$
+
+\begin{align*}
+  \frac{d}{dt}cos(t^2) &= 2t(-sin(t^2)) = -2tsin(t^2) \\
+  \frac{d^2}{dt^2}cos(t^2) &= \frac{d}{dt}(-2tsin(t^2)) \\
+  &= -2sin(t^2) - 2t(2tcos(t^2)) \\
+  &= -2sin(t^2) - 4t^2cos(t^2) \\
+  \frac{d^3}{dt^3}cos(t^2) &= \frac{d}{dt}(-2sin(t^2) - 4t^2cos(t^2)) \\
+  &= -2(2t)cos(t^2) - 8tcos(t^2) - 4t^2(2t \cdot (-sin(t^2))) \\
+  &= -4tcos(t^2) - 8tcos(t^2) + 8t^3sin(t^2) \\
+  &= -12tcos(t^2) + 8t^3sin(t^2) \\
+  \frac{d^4}{dt^4}cos(t^2) &= \frac{d}{dt}(-12tcos(t^2) + 8t^3sin(t^2)) \\
+  &= -12cos(t^2) - 12t(2t \cdot (-sin(t^2))) + 24t^2 sin(t^2) + 8t^3 \cdot 2tcos(t^2) \\
+  &= -12cos(t^2) + 24t^2sin(t^2) + 24t^2sin(t^2) + 16t^4cos(t^2) \\
+  &= -12cos(t^2) + 48t^2sin(t^2) + 16t^4cos(t^2)
+\end{align*}
+
+The error to $\int_0^{0.1} cos(t^2) dt$ is bounded from above by
+
+\begin{equation*}
+\max_{0 \leq t \leq 0.1} \Big| -12cos(t^2) + 48t^2sin(t^2) + 16t^4cos(t^2) \Big| \cdot \frac{(0.1 - 0)h^4}{180}
+\end{equation*}
+
+
 \end{document}
