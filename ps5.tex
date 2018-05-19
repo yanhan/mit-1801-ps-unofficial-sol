@@ -195,5 +195,40 @@ The error to $\int_0^{0.1} cos(t^2) dt$ is bounded from above by
 \max_{0 \leq t \leq 0.1} \Big| -12cos(t^2) + 48t^2sin(t^2) + 16t^4cos(t^2) \Big| \cdot \frac{(0.1 - 0)h^4}{180}
 \end{equation*}
 
+where $h = \frac{b - a}{N}$
+
+First, we try to find this:
+
+\begin{equation*}
+\max_{0 \leq t \leq 0.1} \Big| -12cos(t^2) + 48t^2sin(t^2) + 16t^4cos(t^2) \Big|
+\end{equation*}
+
+Since $0 \leq t \leq 0.1$ and both $t^2$ and $sin(t^2)$ are increasing on that range, $48t^2sin(t^2)$ is maximized at $t = 0.1$, with a value of approximately $0.0479992$. Which is very close to 0.
+
+Now, we look at $-12cos(t^2) + 16t^4cos(t^2) = (16t^4 - 12)cos(t^2)$ on that same range.
+
+On $0 \leq t \leq 0.1$, $16t^4 - 12$ is increasing. On that range, $-12 \leq 16t^4 - 12 \leq -11.99999984$ which is around $-12$. $cos(t^2)$ is maximized at $t = 0$ and decreases as $t \rightarrow 0.1$. However, at $t = 0.1$, $cos(t^2) = cos(0.1^2) \approx 0.99995 \approx 1$. Hence $16t^4cos(t^2) - 12cos(t^2) \approx -12$ on $0 \leq t \leq 0.1$ and it makes very little difference which value we pick.
+
+Hence on $0 \leq t \leq 0.1$, $-12cos(t^2) + 48t^2sin(t^2) + 16t^4cos(t^2) \approx 0 - 12 = -12$.
+
+Then $\Big|-12cos(t^2) + 48t^2sin(t^2) + 16t^4cos(t^2) \Big| \approx \Big|-12\Big| = 12$
+
+Then
+
+\begin{equation*}
+\max_{0 \leq t \leq 0.1} \Big| -12cos(t^2) + 48t^2sin(t^2) + 16t^4cos(t^2) \Big| \cdot \frac{(0.1 - 0)h^4}{180}
+\end{equation*}
+
+is just $12 \cdot \frac{(0.1 - 0)h^4}{180}$ and the error of $\int_0^{0.1} cos(t^2) dt$ is $\leq 12 \cdot \frac{(0.1 - 0)h^4}{180}$
+
+Since we want to estimate $f(0.1)$ to 6 decimal places, we choose that this error is less than $0.0000005$
+
+Which means
+
+\begin{align*}
+  12 \cdot \frac{(0.1 - 0)h^4}{180} &= \frac{0.1h^4}{15} < 0.0000005 \\
+  0.1 h^4 &< 0.0000075 \\
+  h^4 &<= 0.000075
+\end{align*}
 
 \end{document}
