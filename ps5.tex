@@ -248,4 +248,29 @@ Let's use $N = 4$
 
 Wolfram Alpha gives us $0.099999$ so this is good enough.
 
+
+\begin{tcolorbox}
+  \textbf{Q2e)} Fresnel integrals are sometimes expressed using different scaling of the variables.\\
+  \textbf{Q2e(i)} Let $g(x) = \int_{0}^{x} cos((\pi/2)u^2) du$. Make a change of variables to show that $f(x) = c_1g(c_2 x)$ for some constants $c_1$ and $c_2$. Why did we choose the factor $\pi/2$?
+\end{tcolorbox}
+
+$g(x) = \int_{0}^{x} cos(\frac{\pi}{2}u^2) du$
+
+Let $f(x) = \int_0^{x} cos(t^2) dt$. We want to show that $f(x) = c_1g(c_2x)$
+
+Let $t = \sqrt{\frac{\pi}{2}} u$. Then $t^2 = \frac{\pi}{2}u^2$ and $dt = \sqrt{\frac{\pi}{2}} du$
+
+\begin{align*}
+  f(x) = \int_0^{x / \sqrt{\pi/2}} cos(\frac{\pi}{2}u^2) \sqrt{\frac{\pi}{2}} du &= \sqrt{\frac{\pi}{2}} \int_0^{x / \sqrt{\pi / 2}} cos(\frac{\pi}{2} u^2) du \\
+  = \sqrt{\frac{\pi}{2}} g(\frac{1}{\sqrt{\pi / 2}} x)
+\end{align*}
+
+so $c_1 = \sqrt{\frac{\pi}{2}}, c_2 = \frac{1}{\sqrt{\pi / 2}}$
+
+Why choose the factor $\frac{\pi}{2}$?
+
+For $cos(t^2)$, $y = 1$ at $t^2 = 0, 2\pi$; $y = 0$ at $t^2 = \frac{\pi}{2}, \frac{3\pi}{2}, ...$ and $y = -1$ at $t^2 = 2(n+1)\pi$. All these $t$ happen to be multiples of $\frac{\pi}{2}$. By using a factor of $\frac{\pi}{2}$, we get $f(x) = \pi g(\frac{1}{\sqrt{\pi / 2}} x)$ which factors out a $\frac{1}{\sqrt{\pi / 2}}$. Hence, for $g$, instead of dealing with $t^2$ which are multiples of $\frac{\pi}{2}$, we get to deal with $t^2 = 1, \frac{3}{2}, 2$, etc which are easier numbers to work with.
+
+This is not a great explanation but it was what I could come up with.
+
 \end{document}
