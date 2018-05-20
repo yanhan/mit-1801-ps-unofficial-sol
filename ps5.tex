@@ -228,7 +228,24 @@ Which means
 \begin{align*}
   12 \cdot \frac{(0.1 - 0)h^4}{180} &= \frac{0.1h^4}{15} < 0.0000005 \\
   0.1 h^4 &< 0.0000075 \\
-  h^4 &<= 0.000075
+  h^4 &<= 0.000075 \\
 \end{align*}
+
+Substitute $h = \frac{0.1}{N}$
+
+\begin{align*}
+  (\frac{0.1}{N})^4 &< 0.000075 \\
+  N^4 &> \frac{0.1^4}{0.000075} \\
+  N &> (\frac{0.1^4}{0.000075})^{\frac{1}{4}} \approx 1.0745699
+\end{align*}
+
+Let's use $N = 4$
+
+\begin{align*}
+  \int_{0}^{0.1} cos(t^2) dt &\approx \frac{1}{3} \cdot \frac{0.1}{4} (cos(0^2) + 4cos(0.025^2) + 2cos(0.05^2) + 4cos(0.075^2) + cos(0.1^2)) \\
+  &\approx 0.09999899740072335
+\end{align*}
+
+Wolfram Alpha gives us $0.099999$ so this is good enough.
 
 \end{document}
