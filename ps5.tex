@@ -273,4 +273,24 @@ For $cos(t^2)$, $y = 1$ at $t^2 = 0, 2\pi$; $y = 0$ at $t^2 = \frac{\pi}{2}, \fr
 
 This is not a great explanation but it was what I could come up with.
 
+
+\begin{tcolorbox}
+  \textbf{Q2e(ii)} Let $h(x) = \int_0^x \frac{cos v}{\sqrt{v}} dv$. (This integral is called \emph{improper} because $1 / \sqrt{v}$ is infinite \footnote{Although the integrand is infinite, the area under the curve is finite. The function $h$ is continuous, $h(0) = 0$, but its graph has infinite slope at $x = 0$} at $v = 0$.) Make a different change of variable to show that $f(x) = ch(x^2)$ for some constant $c$ (assume that $x > 0$).
+\end{tcolorbox}
+
+Let $t^2 = v$. Then $2t dt = dv$ and $dt = \frac{dv}{2t} = \frac{dv}{2\sqrt{v}}$ or $\frac{dv}{-2\sqrt{v}}$ (reject this because $t$ starts from 0, the lower bound of the integral).
+
+Lower bound: $t = 0, v = t^2 = 0$
+
+Upper bound: $t = x, v = x^2$
+
+Then
+
+\begin{align*}
+  f(x) &= \int_0^x cos(t^2) dt \\
+  &= \int_0^{x^2} cos(v) \frac{dv}{2\sqrt{v}} \\
+  &= \frac{1}{2} \int_0^{x^2} \frac{cos(v)}{\sqrt{v}} dv \\
+  &= \frac{1}{2} h(x^2)
+\end{align*}
+
 \end{document}
