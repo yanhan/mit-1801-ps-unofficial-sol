@@ -293,4 +293,27 @@ Then
   &= \frac{1}{2} h(x^2)
 \end{align*}
 
+
+\begin{tcolorbox}
+  \textbf{Q2e(iii)} Let $k(x) = \sqrt{x} \int_0^1 cos(xt^2)dt$, $x > 0$. Use the change of variable $z = xt^2$ and part (ii) to find the relationship between the functions $k$ and $f$. Hint: Which quantities are variable and which are constant? (Not assigned: you can also work out this relationship using a change of variables like the one in part (i).)
+\end{tcolorbox}
+
+$k(x) = \sqrt{x} \int_0^1 cos(xt^2)dt$, $x > 0$. $x$ is constant and $t$ is the variable.
+
+Let $z = xt^2$. Then $dz = 2xt dt$ and $dt = \frac{dz}{2xt} = \frac{dz}{2x\sqrt{z/x}}$ or $\frac{dz}{2x(-\sqrt{z/x})}$ (rejected because lower bound for $t$ is $0$ so the overall value has to be non negative)
+
+Lower bound: $t = 0, z = x(0)^2 = 0$
+
+Upper bound: $t = 1, z = x(1)^2 = x$
+
+\begin{align*}
+  k(x) &= \sqrt{x} \int_0^1 cos(xt^2) dt \\
+  &= \sqrt{x} \int_0^x cos(z) \frac{dz}{2x\sqrt{z/x}} \\
+  &= \sqrt{x} \int_0^x cos(z) \frac{dz}{2\sqrt{x}\sqrt{z}} \\
+  &= \frac{1}{2} \int_0^x cos(z) \frac{dz}{\sqrt{z}} \\
+  &= \frac{1}{2} h(x)
+\end{align*}
+
+So $c = \frac{1}{2}$.
+
 \end{document}
