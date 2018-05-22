@@ -316,4 +316,42 @@ Upper bound: $t = 1, z = x(1)^2 = x$
 
 So $c = \frac{1}{2}$.
 
+
+\begin{tcolorbox}
+  \textbf{Q3a)} Do 7.3/22
+\end{tcolorbox}
+
+\textbf{Skipped}. We do not have the textbook.
+
+
+\begin{tcolorbox}
+  \textbf{Q3b)} Find the volume of the region in 3-space with $x > 0$, $y > 0$ and $z > 0$ given by
+  \begin{align*}
+    z^2 < x + y < z
+  \end{align*}
+  Hint: First find the area of the horizontal cross-sections.
+\end{tcolorbox}
+
+For $z^2 / 2 < z$, we need $z / 2 < 1$ (Division by $z$ is ok since $z > 0$ and there is no change of sign)
+
+Then $z < 2$. Hence $0 < z < 2$.
+
+Area in terms of $z$ for one slice = $\frac{1}{2} * z * z - \frac{1}{2} * \frac{z^2}{2} * \frac{z^2}{2} = \frac{z^2}{2} - \frac{z^4}{8}$
+
+Pictorially, it looks like the following for a fixed $z$:
+
+\begin{center}
+  \includegraphics[scale=0.5]{q3b.jpg}
+\end{center}
+
+Volume is
+
+\begin{align*}
+  \int_0^2 \frac{z^2}{2} - \frac{z^4}{8} dz &= \frac{z^3}{6} - \frac{z^5}{40}\bigg]_0^2 \\
+  &= \frac{8}{6} - \frac{32}{40} \\
+  &= \frac{8 * 20 - 32 * 3}{120} \\
+  &= \frac{64}{120} \\
+  &= \frac{8}{15}
+\end{align*}
+
 \end{document}
