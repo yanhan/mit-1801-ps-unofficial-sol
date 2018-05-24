@@ -1,0 +1,57 @@
+\documentclass[9pt]{article}
+
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+% `parskip` removes indentation for all paragraphs: http://tex.stackexchange.com/a/55016
+\usepackage{parskip}
+% Allows us to color rows / cols of a table.
+% See https://texblog.org/2011/04/19/highlight-table-rowscolumns-with-color/
+\usepackage{color, colortbl}
+
+\usepackage{hyperref}
+\graphicspath{{images/ps5/}}
+
+\leftmargin=0.25in
+\oddsidemargin=0.25in
+\textwidth=6.0in
+\topmargin=-0.25in
+\textheight=9.25in
+
+\definecolor{Gray}{gray}{0.9}
+
+\begin{document}
+
+\begin{center}
+  \large\textbf{MIT 18.01 Problem Set 6 Unofficial Solutions}
+\end{center}
+
+\begin{tcolorbox}
+  \textbf{Q1)} Do 7.4/12 and 13.
+\end{tcolorbox}
+
+\textbf{Skipped.} We do not have the textbook.
+
+
+\begin{tcolorbox}
+  \textbf{Q2)} The voltage $V$ of the house current is given by\\
+  \begin{center}
+    $V(t) = Csin(120\pi t)$
+  \end{center}
+  where $t$ is time, in seconds and $C$ is a constant amplitude. The square root of the average value of $V^2$ over one period of $V(t)$ (or cycle) is called the \emph{root-mean-square} voltage, abbreviated RMS. This is what the voltage meter on a house records. For house current, find the RMS in terms of the constant $C$. (The peak voltage delivered to the house is $\pm C$. The units of $V^2$ are square volts; when we take the square root again after averaging, the units become volts again.)
+\end{tcolorbox}
+
+Every cycle of the $sin$ function corresponds to $2 \pi$. This happens every $t = \frac{2 \pi}{120 \pi} = \frac{1}{60}$ seconds.
+
+Since $V(t) = Csin(120\pi t)$, $V^2(t) = C^2 sin^2(120\pi t)$. The average value of $V^2$ over 1 cycle of $V(t)$ is:
+
+\begin{align*}
+  \frac{1}{\frac{1}{60} - 0} \int_0^{\frac{1}{60}} C^2 sin^2(120\pi t) dt &= 60C^2 \int_0^{\frac{1}{60}} sin^2(120\pi t) dt \\
+  &= 60C^2(\frac{1}{2}t - \frac{1}{240\pi} sin(120\pi t) cos(120\pi t)) \bigg]_0^{1/60} \\
+  &= 60C^2(\frac{1}{2} \cdot \frac{1}{60} - \frac{1}{240\pi} sin(2\pi) cos(2\pi) - (\frac{1}{2} \cdot 0 - \frac{1}{240\pi} sin(0) cos(0))) \\
+  &= 60C^2 \cdot \frac{1}{120} \\
+  &= \frac{C^2}{2}
+\end{align*}
+
+Then RMS $= \sqrt{\frac{C^2}{2}} = \frac{C}{\sqrt{2}} = \frac{\sqrt{2}C}{2}$
+
+\end{document}
