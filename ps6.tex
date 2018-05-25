@@ -70,4 +70,26 @@ Then RMS $= \sqrt{\frac{C^2}{2}} = \frac{C}{\sqrt{2}} = \frac{\sqrt{2}C}{2}$
   &= \frac{2}{3}
 \end{align*}
 
+
+\begin{tcolorbox}
+  \textbf{Q3b)} What is the probability that $x^2 < y$ if $(x, y)$ is chosen from the square $0 \leq x \leq 2$, $0 \leq y \leq 2$ with probability \textbf{proportional} to the area. (Probability = Part/Whole).
+\end{tcolorbox}
+
+\begin{center}
+  \includegraphics[scale=0.5]{q3b.jpg}
+\end{center}
+
+For the line $y = x^2$ $y = 2$, $x = \sqrt{2}$. Once $x \ge \sqrt{2}$, $y > 2$. Hence $x \leq \sqrt{2}$.
+
+\begin{align*}
+  P(x^2 < y) &= \frac{\int_0^2 2 dx - \int_0^{\sqrt{2}} x^2 dx - \int_{\sqrt{2}}^2 2 dx}{\int_0^2 2 dx} \\
+  &= \frac{2x \bigg]_0^2 - \frac{x^3}{3} \bigg]_0^{\sqrt{2}} - 2x \bigg]_{\sqrt{2}}^2}{2x \bigg]_0^2} \\
+  &= \frac{4 - \frac{(\sqrt{2})^3}{3} - (4 - 2\sqrt{2})}{4} \\
+  &= \frac{4 - \frac{2\sqrt{2}}{3} - 4 + 2\sqrt{2}}{4} \\
+  &= \frac{2\sqrt{2} - \frac{2\sqrt{2}}{3}}{4} \\
+  &= \frac{\frac{6 \sqrt{2} - 2\sqrt{2}}{3}}{4} \\
+  &= \frac{\frac{4 \sqrt{2}}{3}}{4} \\
+  &= \frac{\sqrt{2}}{3}
+\end{align*}
+
 \end{document}
