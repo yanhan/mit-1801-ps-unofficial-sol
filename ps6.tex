@@ -92,4 +92,29 @@ For the line $y = x^2$ $y = 2$, $x = \sqrt{2}$. Once $x \ge \sqrt{2}$, $y > 2$. 
   &= \frac{\sqrt{2}}{3}
 \end{align*}
 
+
+\begin{tcolorbox}
+  \textbf{Q3c)} Evaluate \\
+  \begin{center}
+    $W = \int_0^{\infty} e^{-at} dt = \lim\limits_{N \rightarrow \infty} \int_0^N e^{-at} dt$
+  \end{center}
+  This is known as an improper integral because it represents the area of an unbounded region. We are using the letter $W$ to signify "whole". \\
+  The probability that a radioactive particle will decay some time in the interval $0 \leq t \leq T$ is \\
+  \begin{center}
+    $P([0, T]) = \frac{\text{PART}}{\text{WHOLE}} = \frac{1}{W} \int_0^T e^{-at} dt$
+  \end{center}
+  \begin{center}
+  \end{center}
+  Note that $P([0, \infty)) = 1 = 100\%$
+\end{tcolorbox}
+
+\begin{align*}
+  \int_0^{\infty} e^{-at} dt &= -\frac{1}{a} e^{-at} \bigg]_0^{\infty} \\
+  &= -\frac{1}{a} (e^{-a \cdot \infty} - e^{-a \cdot 0}) \\
+  &= -\frac{1}{a} (\frac{1}{e^{a \cdot \infty}} - \frac{1}{e^{a \cdot 0}}) \\
+  &= -\frac{1}{a} (0 - \frac{1}{e^0}) \\
+  &= -\frac{1}{a} (-1) \\
+  &= \frac{1}{a}
+\end{align*}
+
 \end{document}
