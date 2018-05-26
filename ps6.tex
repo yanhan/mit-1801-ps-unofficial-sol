@@ -117,4 +117,41 @@ For the line $y = x^2$ $y = 2$, $x = \sqrt{2}$. Once $x \ge \sqrt{2}$, $y > 2$. 
   &= \frac{1}{a}
 \end{align*}
 
+
+\begin{tcolorbox}
+  \textbf{Q3d)} The half-life is the time $T$ for which $P([0, T]) = 1/2$. Find the value of $a$ and $W$ for which the half-life is $T = 1$. Suppose that a radioactive particle has a half-life of 1 second. What is the probability that it survives to time $t = 1$, but decays some time during the interval $1 \leq t \leq 2$? (Give an integral formula, and use a calculator to get an approximate numerical answer.)
+\end{tcolorbox}
+
+We saw in part (c) that $W = \frac{1}{a}$. We want to find $a$ and $W$ such that $P([0, 1]) = \frac{1}{2}$
+
+\begin{align*}
+  P([0, 1]) &= \frac{\int_0^1 e^{-at} dt}{W} \\
+  &= a \int_0^1 e^{-at} dt \\
+  &= a(-\frac{1}{a} e^{-at} \bigg]_0^1) \\
+  &= a \cdot (-\frac{1}{a}) e^{-at} \bigg]_0^1 \\
+  &= -1(e^{-a} - e^0) \\
+  &= -1(\frac{1}{e^a} - 1) \\
+  &= 1 - \frac{1}{e^a} \\
+  &= \frac{1}{2}
+\end{align*}
+
+So $1 - \frac{1}{e^a} = \frac{1}{2}$. Then $\frac{1}{2} = \frac{1}{e^a}$ and $e^a = 2$ so $a = ln(2)$ and $W = \frac{1}{a} = \frac{1}{ln(2)}$
+
+From $0 \leq t \leq 1$, the particle decays with probability $\frac{1}{2}$ and survives with probability $\frac{1}{2}$. These 2 cases are mutually exclusivge and from $1 \leq t \leq 2$, the particle decays with probability $\frac{1}{W} \int_1^2 e^{-at} dt$ regardless of what happens from $0 \leq t \leq 1$.
+
+Hence probability of particule surviving to $t = 1$ and decaying some time in $1 \leq t \leq 2$ is
+
+\begin{align*}
+  \frac{1}{2} \cdot \frac{1}{W} \int_1^2 e^{-at} dt &= \frac{1}{2} * a(-\frac{1}{a} e^{-at} \bigg]_1^2) \\
+  &= -\frac{1}{2} (e^{-at} \bigg]_1^2) \\
+  &= -\frac{1}{2} (e^{-2a} - e^{-a}) \\
+  &= \frac{1}{2} e^{-a} - \frac{1}{2} e^{-2a} \\
+  &= \frac{1}{2} e^{-ln(2)} - \frac{1}{2} e^{-2ln(2)} \\
+  &= \frac{1}{2} e^{ln(2^{-1})} - \frac{1}{2} e^{ln(2^{-2})} \\
+  &= \frac{1}{2} e^{ln(\frac{1}{2})} - \frac{1}{2} e^{ln(\frac{1}{4})} \\
+  &= \frac{1}{2} \cdot \frac{1}{2} - \frac{1}{2} \cdot \frac{1}{4} \\
+  &= \frac{1}{4} - \frac{1}{8} \\
+  &= \frac{1}{8}
+\end{align*}
+
 \end{document}
