@@ -154,4 +154,68 @@ Hence probability of particule surviving to $t = 1$ and decaying some time in $1
   &= \frac{1}{8}
 \end{align*}
 
+
+\begin{tcolorbox}
+  \textbf{Q4)} The basis for Simson's rule is the following formula. Let $x_1$ be the midpoint of the interval $[x_0, x_2]$, and denote its length by $2h$. Consider any three points $(x_0, y_0)$, $(x_1, y_1)$, $(x_2, y_2)$. There is a unique quadratic function (parabola) \\
+  \begin{center}
+    $y = Ax^2 + Bx + C$
+  \end{center}
+  \begin{center}
+  \end{center}
+  whose graph passes through the three points. Simpson's rule says that the area under the parabola above $[x_0, x_2]$ is
+  \begin{center}
+    $\frac{h}{3}(y_0 + 4y_1 + y_2)$
+  \end{center}
+  \begin{center}
+  \end{center}
+  This problem is devoted to proving this formula. It is significant because it illustrates how calculations can be simplified by using symmetry, and by looking ahead to see what you need.\\
+  \\
+  Since the area will be the same if the parabola is translated to the left or right, we may assume that $x_0 = -h$, $x_1 = 0$, and $x_2 = h$. Then in terms of the rest of the data (i.e., $h$ and the $y_i$) \\
+  \\
+  make a sketch and determine $C$;\\
+  \\
+  show, by integrating, that to find the area we need only determine $A$ (or better, $2Ah^2$);\\
+  \\
+  determine $2Ah^2$ using the data;\\
+  \\
+  put the results together to establish the formula for area.
+\end{tcolorbox}
+
+Since we are assuming that $x_1 = 0$, the easiest way to get $C$ is to substitute $x = x_1 = 0$ and $y = y_1$ into $y = Ax^2 + Bx + C$. From that, we get $y_1 = A(0)^2 + B(0) + C$ or $y_1 = C$.
+
+Again, substituting $(x_2, y_2)$ into $y = Ax^2 + Bx + C$, we get $f(x_2) = f(h) = A(h^2) + B(h) + C = Ah^2 + Bh + y_1 = y_2$. Then $Bh = -Ah^2 - y_1 + y_2$ and $B = -Ah - \frac{y_1}{h} - \frac{y_2}{h}$ assuming $h \neq 0$.
+
+\begin{align*}
+  \int_{-h}^h Ax^2 + Bx + C dx &= \int_{-h}^h Ax^2 + (-Ah - \frac{y_1}{h} + \frac{y_2}{h})x + y_1 dx \\
+  &= \bigg[ \frac{Ax^3}{3} - \frac{Ahx^2}{2} - \frac{y_1x^2}{2h} + \frac{y_2x^2}{2h} + y_1x \bigg]_{-h}^h \\
+  &= \frac{Ah^3}{3} - \frac{Ahh^2}{2} - \frac{y_1h^2}{2h} + \frac{y_2h^2}{2h} + y_1h - (\frac{A(-h)^3}{3} - \frac{Ah(-h)^2}{2} - \frac{y_1(-h)^2}{2h} + \frac{y_2(-h)^2}{2h} + y_1(-h)) \\
+  &= \frac{Ah^3}{3} - \frac{Ah^3}{2} - \frac{y_1h}{2} + \frac{y_2h}{2} + y_1h - (-\frac{Ah^3}{3} - \frac{Ah^3}{2} - \frac{y_1h}{2} + \frac{y_2h}{2} - y_1h) \\
+  &= \frac{2Ah^3}{3} + 2y_1h \\
+  &= \frac{h}{3}(2Ah^2 + 6y_1)
+\end{align*}
+
+If we know $x_0$ and $x_2$, then we will know $h$. We will also know $x_1$ and hence $y_1$. Then we only need to determine $A$ to find the area.
+
+Now we will determine $2Ah^2$ from the data. Earlier, we have that $y_2 = Ah^2 + Bh + y_1$. From this, we get $Ah^2 = y_2 - Bh - y_1$.
+
+If we substitute $(x_0 = -h, y_0)$ into $y = Ax^2 + Bx + C$, we get $y_0 = A(-h)^2 + B(-h) + C = Ah^2 - Bh + C$ and $Ah^2 = y_0 + Bh - C$ and since $C = y_1$, this is $Ah^2 = y_0 + Bh - y_1$.
+
+Now we have
+
+\begin{align*}
+  Ah^2 &= y_2 - Bh - y_1 \\
+  Ah^2 &= y_0 + Bh - y_1
+\end{align*}
+
+Adding them together gives us $2Ah^2 = y_2 - Bh - y_1 + y_0 + Bh - y_1 = y_0 - 2y_1 + y_2$. Then $2Ah^2 + 6y_1 = y_0 - 2y_1 + y_2 + 6y_1 = y_0 + 4y_1 + y_2$.
+
+Then
+
+\begin{align*}
+  \int_{-h}^h Ax^2 + Bx + C dx &= \frac{h}{3}(2Ah^2 + 6y_1) \\
+  &= \frac{h}{3}(y_0 + 4y_1 + y_2)
+\end{align*}
+
+which is exactly what we want.
+
 \end{document}
