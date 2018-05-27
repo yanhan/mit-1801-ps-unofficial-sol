@@ -21,8 +21,8 @@ These are questions that I just can't seem to solve no matter what. Any help her
 - PS2 (done)
 - PS3 (done)
 - PS4 (done)
-- PS5 (pending)
-- PS6 (pending)
+- PS5 (done)
+- PS6 (done)
 - PS7 (pending)
 - PS8 (pending)
 
