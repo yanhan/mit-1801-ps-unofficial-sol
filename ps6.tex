@@ -218,4 +218,54 @@ Then
 
 which is exactly what we want.
 
+
+\begin{tcolorbox}
+  \textbf{Q5)} Use a calculator to make a table of values of the integrand and find approximations to the Fresnel integral $\int_0^a cos(t^2) dt$ for $a = \sqrt{\pi / 2}$, using Simpson's rule with four and eight intervals. (The exact answer to five decimal places is $1.22505$. Record your approximations to six decimal places to compare.)
+\end{tcolorbox}
+
+With 4 intervals, each interval is of size $\frac{1}{4} \sqrt{\frac{\pi}{2}}$.
+
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \rowcolor{Gray}
+    $x$ & $cos(x^2)$ \\ \hline
+    $0$ & $cos(0^2) = 1$ \\ \hline
+    $\frac{1}{4} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{1}{16} \cdot \frac{\pi}{2}) = cos(\frac{\pi}{32})$ \\ \hline
+    $\frac{1}{2} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{1}{4} \cdot \frac{\pi}{2}) = cos(\frac{\pi}{8})$ \\ \hline
+    $\frac{3}{4} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{9}{16} \cdot \frac{\pi}{2}) = cos(\frac{9\pi}{32})$ \\ \hline
+    $\sqrt{\frac{\pi}{2}}$ & $cos(\frac{\pi}{2}) = 0$ \\ \hline
+  \end{tabular}
+\end{center}
+
+\begin{align*}
+  \int_0^a cos(t^2) dt &= \frac{\frac{1}{4} \sqrt{\frac{\pi}{2}}}{3} (cos(0^2 ) + 4cos(\frac{\pi}{32}) + 2cos(\frac{\pi}{8}) + 4cos(\frac{9\pi}{32}) + cos(\frac{\pi}{2})) \\
+  &\approx 0.978219
+\end{align*}
+
+With 8 intervals, each interval is of size $\frac{1}{8} \sqrt{\frac{\pi}{2}}$
+
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \rowcolor{Gray}
+    $x$ & $cos(x^2)$ \\ \hline
+    $0$ & $cos(0^2) = 1$ \\ \hline
+    $\frac{1}{8} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{1}{64} \cdot \frac{\pi}{2}) = cos(\frac{\pi}{128})$ \\ \hline
+    $\frac{2}{8} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{4}{64} \cdot \frac{\pi}{2}) = cos(\frac{\pi}{32})$ \\ \hline
+    $\frac{3}{8} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{9}{64} \cdot \frac{\pi}{2}) = cos(\frac{9\pi}{128})$ \\ \hline
+    $\frac{4}{8} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{16}{64} \cdot \frac{\pi}{2}) = cos(\frac{\pi}{8})$ \\ \hline
+    $\frac{5}{8} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{25}{64} \cdot \frac{\pi}{2}) = cos(\frac{25\pi}{128})$ \\ \hline
+    $\frac{6}{8} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{36}{64} \cdot \frac{\pi}{2}) = cos(\frac{9\pi}{32})$ \\ \hline
+    $\frac{7}{8} \sqrt{\frac{\pi}{2}}$ & $cos(\frac{49}{64} \cdot \frac{\pi}{2}) = cos(\frac{49\pi}{128})$ \\ \hline
+    $\sqrt{\frac{\pi}{2}}$ & $cos(\frac{\pi}{2}) = 0$ \\ \hline
+  \end{tabular}
+\end{center}
+
+\begin{align*}
+  \int_0^a cos(t^2) dt &= \frac{\frac{1}{8} \sqrt{\frac{\pi}{2}}}{3} (cos(0^2) + 4cos(\frac{\pi}{128}) + 2cos(\frac{\pi}{32}) + 4cos(\frac{9\pi}{128}) + 2cos(\frac{\pi}{8}) + 4cos(\frac{25\pi}{128}) + 2cos(\frac{9\pi}{32}) \\
+  & \ \ \ + 4cos(\frac{49\pi}{128}) + cos(\frac{\pi}{2})) \\
+  &\approx 0.977503
+\end{align*}
+
 \end{document}
