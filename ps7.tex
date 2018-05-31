@@ -9,6 +9,7 @@
 \usepackage{color, colortbl}
 
 \usepackage{hyperref}
+\graphicspath{{images/ps7/}}
 
 \leftmargin=0.25in
 \oddsidemargin=0.25in
@@ -48,5 +49,31 @@ Average value of $V^2$ over $1$ period of $V(t)$ is
 \end{align*}
 
 Square root of average value of $V^2$ over 1 period of $V(t) = \sqrt{\frac{C^2}{7200}} = \frac{C}{\sqrt{3600 * 2}} = \frac{C}{60\sqrt{2}}$
+
+
+\begin{tcolorbox}
+  \textbf{Q2)} The solid torus is the figure obtained by rotating the disk $(x - b)^2 + y^2 \leq a^2$ around the $y$-axis. Find its volume by the method of shells. (Hint: Substitute for $x - b$. As noted p. 229/11, the answer happens to be the area of the disk multiplied by the distance travelled by the center as it revolves.)
+\end{tcolorbox}
+
+\begin{center}
+  \includegraphics[scale=0.5]{q2.jpg}
+\end{center}
+
+For a circle centered at $x = b, y = 0$ with radius $a$, the volume of the torus is:
+
+\begin{align*}
+  2 \int_{b-a}^{b+a} 2 \pi x (\sqrt{a^2 - (x - b)^2}) dx &= 4 \pi \int_{b-a}^{b+a} x \sqrt{a^2 - (x - b)^2} dx
+\end{align*}
+
+Let $u = x - b$. Then $du = dx$. Also, $x = u + b$. Substitute those into the above:
+
+\begin{align*}
+  4 \pi \int_{b-a}^{b+a} x \sqrt{a^2 - (x - b)^2} dx &= 4 \pi \int_{-a}^{a} (u + b) \sqrt{a^2 - u^2} du \\
+  &= 4 \pi (\int_{-a}^{a} u \sqrt{a^2 - u^2} du + b \int_{-a}^{a} \sqrt{a^2 - u^2} du) \\
+  &= 4\pi ( -\frac{1}{2} \cdot \frac{({a^2 - u^2})^{3/2}}{\frac{3}{2}} \bigg]_{-a}^{a} + b \int_{-a}^{a} \sqrt{a^2 - u^2} du ) \\
+  &= 4 \pi b \int_{-a}^{a} \sqrt{a^2 - u^2} du \ \ \ \ \text{(area of semicircle of radius $a$ centered at origin)} \\
+  &= 4 \pi b (\frac{1}{2} \pi a^2) \\
+  &= 2 \pi^2 a^2 b
+\end{align*}
 
 \end{document}
