@@ -114,4 +114,37 @@ Verify:
   &= tan^4 x
 \end{align*}
 
+
+\begin{tcolorbox}
+  \textbf{Q4a)} Derive a formula for $\int sec \ x \ dx$ by writing $sec \ x = \frac{cos \ x}{1 - sin^2 x}$ (verify this), and then making a substitution for $sin x$ and using partial fractions. (Your final answer must be expressed in terms of $x$.)
+\end{tcolorbox}
+
+
+\begin{align*}
+  \frac{cos \ x}{1 - sin^2 x} &= \frac{cos \ x}{cos^2 x} \\
+  &= \frac{1}{cos \ x} \\
+  &= sec \ x
+\end{align*}
+
+For $\int sec x \ dx = \int \frac{cos \ x}{1 - sin^2 x} dx$, let $u = sin x$. Then $du = cos \ x \ dx$
+
+\begin{align*}
+  \frac{cos \ x}{1 - sin^2 x} dx &= \int \frac{du}{1 - u^2} \\
+  &= \int \frac{1}{(1 + u)(1 - u)} du \\
+  &= \int \frac{1 / 2}{1 + u} + \frac{1 / 2}{1 - u} du \\
+  &= \frac{1}{2} ln(1 + u) - \frac{1}{2} ln(1 - u) + C \\
+  &= \frac{1}{2} ln(1 + sin \ x) - \frac{1}{2} ln(1 - sin \ x) + C \\
+\end{align*}
+
+Verify:
+
+\begin{align*}
+  \frac{1}{2} ln(1 + sin \ x) - \frac{1}{2} ln(1 - sin \ x) + C &= \frac{1}{2} (\frac{cos \ x}{1 + sin \ x}) - \frac{1}{2} (\frac{- cos \ x}{1 - sin x}) \\
+  &= \frac{1}{2} (\frac{cos \ x (1 - sin \ x) + cos \ x (1 + sin \ x)}{(1 + sin \ x)(1 - sin \ x)}) \\
+  &= \frac{1}{2} (\frac{cos \ x - sin \ x \ cos \ x + cos \ x + sin \ x \ cos \ x}{1 - sin^2 x}) \\
+  &= \frac{1}{2} (\frac{2 cos \ x}{cos^2 x}) \\
+  &= \frac{1}{cos \ x} \\
+  &= sec \ x
+\end{align*}
+
 \end{document}
