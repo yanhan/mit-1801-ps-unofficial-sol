@@ -23,7 +23,7 @@ These are questions that I just can't seem to solve no matter what. Any help her
 - PS4 (done)
 - PS5 (done)
 - PS6 (done)
-- PS7 (pending)
+- PS7 (done)
 - PS8 (pending)
 
 
