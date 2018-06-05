@@ -147,4 +147,22 @@ Verify:
   &= sec \ x
 \end{align*}
 
+
+\begin{tcolorbox}
+  \textbf{Q4b)} Convert the formula into the more familiar one by multiplying the fraction in the answer on both top and bottom by $1 + sin \ x$. (Note that $(1 / 2) ln \ u = ln \sqrt{u}$
+\end{tcolorbox}
+
+\begin{align*}
+  \frac{1}{2} ln(1 + sin \ x) - \frac{1}{2} ln(1 - sin \ x) + C &= \frac{1}{2} (ln(1 + sin \ x) - ln(1 - sin \ x)) \\
+  &= \frac{1}{2} ln(\frac{1 + sin \ x}{1 - sin \ x}) \\
+  &= \frac{1}{2} ln(\frac{1 + sin \ x}{1 - sin \ x} \cdot \frac{1 + sin \ x}{1 + sin \ x}) \\
+  &= \frac{1}{2} ln(\frac{sin^2 x + 2 sin \ x + 1}{1 - sin^2 x}) \\
+  &= \frac{1}{2} ln(\frac{sin^2 x + 2 sin \ x + 1}{cos^2 x}) \\
+  &= \frac{1}{2} ln(\frac{sin^2 x}{cos^2 x} + \frac{2 sin \ x}{cos^2 x} + \frac{1}{cos^2 x}) \\
+  &= \frac{1}{2} ln(tan^2 x + 2 sec \ x \ tan \ x + sec^2 x) \\
+  &= \frac{1}{2} ln((sec \ x + tan \ x)^2) \\
+  &= ln(\sqrt{(sec \ x + tan \ x)^2}) \\
+  &= ln(sec \ x + tan \ x)
+\end{align*}
+
 \end{document}
