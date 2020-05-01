@@ -557,4 +557,243 @@ For $k = 3$
   &= \frac{3}{2} a
 \end{align*}
 
+
+\begin{tcolorbox}
+  Q2) The hyperbolic sine and cosine are defined by \\
+  \\
+  $cosh \ x = \frac{e^x + e^{-x}}{2}$, $sinh \ x = \frac{e^x - e^{-x}}{2}$ \\
+  \\
+  a) Show that \\
+  \\
+  i) $\frac{d}{dx}sinh \ x = cosh \ x$ and $\frac{d}{dx}cosh \ x = sinh \ x$. \\
+  \\
+  ii) $\frac{d}{dx}cosh^2 x = 1 + sinh^2 x$ \\
+  \\
+  iii) $cosh^2 x = \frac{1 + cosh \ 2x}{2}$.
+\end{tcolorbox}
+
+\begin{align*}
+  \frac{d}{dx}sinh \ x &= \frac{d}{dx} \frac{e^x - e^{-x}}{2} \\
+  &= \frac{e^x}{2} - (-1) \frac{e^{-x}}{2} \\
+  &= \frac{e^x + e^{-x}}{2} \\
+  &= cosh \ x
+\end{align*}
+
+\begin{align*}
+  cosh^2 x &= (\frac{e^x + e^{-x}}{2})^2 \\
+  &= \frac{e^2x + 2 + e^{-2x}}{4} \\
+  sinh^2 x &= (\frac{e^x - e^{-x}}{2})^2 \\
+  &= \frac{e^2x - 2 + e^{-2x}}{4} \\
+  sinh^2 x + 1 &= \frac{e^2x - 2 + e^{-2x}}{4} + \frac{4}{4} \\
+  &= \frac{e^2x + e^{-2x} + 2}{4} \\
+  &= cosh^2 x
+\end{align*}
+
+\begin{align*}
+  cosh\ 2x &= \frac{e^{2x} + e^{-2x}}{2} \\
+  &= \frac{2e^{2x} + 2e^{-2x}}{4} \\
+  &= \frac{2e^{2x} + 2e^{-2x} + 4 - 4}{4} \\
+  &= \frac{2(e^{2x} + e^{-2x} + 2 - 2)}{4} \\
+  &= \frac{2(e^{2x} + e^{-2x} + 2)}{4} - \frac{4}{4} \\
+  &= 2cosh^2 x - 1 \\
+  cosh^2 x &= \frac{cosh\ 2x + 1}{2}
+\end{align*}
+
+
+\begin{tcolorbox}
+  Q2) The hyperbolic sine and cosine are defined by \\
+  \\
+  $cosh \ x = \frac{e^x + e^{-x}}{2}$, $sinh \ x = \frac{e^x - e^{-x}}{2}$ \\
+  \\
+  b) What curve is described parametrically by $x = cosh\ t$, $y = sinh\ t$? (Give the equation and its name.)
+\end{tcolorbox}
+
+Using $cosh^2 x = 1 + sinh^2 x$, $x = cosh\ x$ and $y = sinh \ t$, we have
+
+$x^2 = 1 + y^2$
+
+$x^2 - y^2 = 1$
+
+This is a hyperbola.
+
+
+\begin{tcolorbox}
+  Q2) The hyperbolic sine and cosine are defined by \\
+  \\
+  $cosh \ x = \frac{e^x + e^{-x}}{2}$, $sinh \ x = \frac{e^x - e^{-x}}{2}$ \\
+  \\
+  c) The curve $y = cosh \ x$ is known as a \textit{catenary}. It is the curve formed by a chain whose two ends are held at the same height.\\
+  i) Sketch the curve \\
+  ii) Find its arclength from the lowest point to the point $(x_1, cosh\ x_1)$ for a fixed $x_1 > 0$
+\end{tcolorbox}
+
+$\frac{dy}{dx} cosh\ x = sinh\ x = \frac{e^x - e^{-x}}{2}$. This is $0$ when $e^x - e^{-x} = 0$, or $e^x = e^{-x}$, or $x = -x$, when $x = 0$.
+
+When $x = 0$, $y = \frac{e^0 + e^{-0}}{2} = 1$. Hence $(0, 1)$ is a critical point.
+
+$\frac{d^2 y}{dx^2} = cosh\ x = y$ . This is $0$ when $e^x + e^{-x} = 0$ which is impossible. There are no points of inflection.
+
+Now we calculate the intercepts.
+
+We know from above that when $x = 0$, $y = 1$. Because $e^x > 0$ and $e^{-x} > 0$, $y > 0$.
+
+$\lim_{x \to -\infty} \frac{e^x + e^{-x}}{2} = \lim_{x \to -\infty} \frac{e^x}{2} + \lim_{x \to -\infty} \frac{e^{-x}}{2} = \infty$
+
+Similarly, the limit as $x \to \infty$ is also $\infty$.
+
+When $x = 0$, $\frac{d^2 y}{dx^2} = cosh \ x = \frac{e^x + e^{-x}}{2} = \frac{e^0 + e^{-0}}{2} = 1 > 0$ . Hence $(0, 1)$ is the minimum point.
+
+\begin{center}
+  \includegraphics[scale=0.8]{2c.jpg}
+\end{center}
+
+\begin{align*}
+  ds &= \sqrt{1 + (\frac{dy}{dx})^2} \ dx \\
+  &= \sqrt{1 + sinh^2 \ x} \ dx \\
+  &= \sqrt{cosh^2 x} \ dx \\
+  &= cosh \ x \ dx
+  \\
+  \int_{s_0}^{s_1} ds &= \int_0^{x_1} cosh \ x \ dx \\
+  &= sinh \ x \bigg]_0^{x_1} \\
+  &= \frac{e^{x_1} + e^{-x_1}}{2} - \frac{e^0 - e^{-0}}{2} \\
+  &= \frac{e^{x_1} + e^{-x_1}}{2} \\
+  &= sinh \ x_1
+\end{align*}
+
+
+\begin{tcolorbox}
+  Q2) The hyperbolic sine and cosine are defined by \\
+  \\
+  $cosh \ x = \frac{e^x + e^{-x}}{2}$, $sinh \ x = \frac{e^x - e^{-x}}{2}$ \\
+  \\
+  d) FInd the area of the surface of revolution formed by revolving the portion of the curve from part (c) around the $x$-axis This surface is known as a catenoid. It is interesting because it is the surface of least area connecting the two circles that form its edges. If you dip two circles of wire in a soap solution, then (with some caoxing) a soap film will form in this shape. In general, the soap films try to span a frame of wires with a surface with the least area possible.
+\end{tcolorbox}
+
+Surface area:
+
+\begin{align*}
+  \int_0^{x_1} 2 \pi y \ dx &= 2 \pi \int_0^{x_1} y \ dx \\
+  &= 2 \pi \int_0^{x_1} cosh \ x \ dx \\
+  &= 2 \pi sinh \ x \bigg]_0^{x_1} \\
+  &= 2 \pi (\frac{e^{x_1} - e^{-x_1}}{2} - \frac{e^0 - e^{-0}}{2}) \\
+  &= 2 \pi sinh \ x_1
+\end{align*}
+
+which is $2\pi$ times the arc length.
+
+
+\begin{tcolorbox}
+  Q3a) Find the area of the right triangle with vertices at $(x, y) = (0, 0)$, $(x, y) = (a, 0)$ and at $(x, y) = (a, h)$, using polar coordinates. (One of the less convenient ways to find the area of a triangle.)
+\end{tcolorbox}
+
+\begin{center}
+  \includegraphics[scale=0.8]{3a.jpg}
+\end{center}
+
+Suppose $a > 0$, $h > 0$.
+
+$r = \sqrt{a^2 + h^2}$
+
+$\theta = tan^{-1} \frac{h}{a}$.
+
+$tan \theta = \frac{h}{a}$.
+
+\begin{align*}
+  \int_{0}^{tan^{-1}(h/a)} \frac{1}{2} r^2 d \theta &= \frac{1}{2} \int_{0}^{tan^{-1}(h/a)} r^2 \ d \theta \\
+  &= \frac{1}{2} \int_{0}^{tan^{-1}(h/a)} a^2 + h^2 \ d \theta \\
+  &= \frac{a^2}{2} \int_{0}^{tan^{-1}(h/a)} 1 + \frac{h^2}{a^2} \ d \theta \\
+  &= \frac{a^2}{2} \int_{0}^{tan^{-1}(h/a)} 1 + (tan \ \theta)^2 \ d \theta \\
+  &= \frac{a^2}{2} \int_{0}^{tan^{-1}(h/a)} sec^2 \ \theta \ d \theta \\
+  &= \frac{a^2}{2} tan \ \theta \bigg]_{0}^{tan^{-1}(h/a)} \\
+  &= \frac{a^2}{2} [tan(tan^{-1}(h/a)) - tan(0)] \\
+  &= \frac{a^2}{2} [\frac{h}{a} - 0] \\
+  &= \frac{ah}{2}
+\end{align*}
+
+
+\begin{tcolorbox}
+  Q3b) Find the equation in $(x, y)$ coordinates for the curve $r = 1 / (1 + sin\ \theta)$ and sketch it.
+\end{tcolorbox}
+
+\begin{align*}
+  r &= \frac{1}{1 + sin\ \theta} \\
+  r &+ r\ sin\ \theta = 1 \\
+  r &+ y = 1 \\
+  x &= r\ cos\ \theta = \frac{cos\ \theta}{1 + sin\ \theta} \\
+  y &= r\ sin\ \theta = \frac{sin\ \theta}{1 + sin\ \theta} \\
+  x^2 + y^2 &= \frac{cos^2 \theta + sin^2 \theta}{(1 + sin\ \theta)^2} = \frac{1}{(1 + sin\ \theta)^2} = r^2 \\
+  r &= (x^2 + y^2)^{1/2} \\
+  r + y &= (x^2 + y^2)^{1/2} + y = 1
+\end{align*}
+
+Hence the equation is $(x^2 + y^2)^{1/2} + y = 1$.
+
+Skipping the sketch.
+
+
+\begin{tcolorbox}
+  Q3c) Find the area of the region $0 \leq r \leq 1 / (1 + sin\ \theta)$, $0 \leq \theta \leq \pi$, using the \textit{rectangular} coordinate formula you found in part (b).
+\end{tcolorbox}
+
+\begin{align*}
+  (x^2 + y^2)^{1/2} + y &= 1 \\
+  (x^2 + y^2)^{1/2} &= 1 - y \\
+  x^2 + y^2 &= (1 - y)^2 \\
+  x^2 = (1 - y)^2 - y^2 &= 1 - 2y \\
+  y &= \frac{1 - x^2}{2}
+\end{align*}
+
+Area:
+
+\begin{align*}
+  \int_{-1}^1 \frac{1 - x^2}{2} dx &= (\frac{x}{2} - \frac{x^3}{6}) \bigg]_{-1}^1 \\
+  &= \frac{1}{2} - \frac{1}{6} - (\frac{-1}{2} - \frac{(-1)^3}{6}) \\
+  &= \frac{1}{2} - \frac{1}{6} + \frac{1}{2} - \frac{1}{6} \\
+  &= \frac{2}{3}
+\end{align*}
+
+
+\begin{tcolorbox}
+  Q3d) Find the area of the region in part (c) using polar coordinates. One way to evaluate the integral is to change variables to $u = \theta - \pi / 2$, and then use the half angle formula \\
+  \\
+  $1 + cos\ u = 2 cos^2(u/2)$ \\
+  \\
+  This area was already computed in part (c), but the polar coordinate formula is still valuable because it gives the area of any sector, not just the one that is bounded by a horizontal line. The area swept out from the viewpoint of the focus of an ellipse, parabola, or hyperbola is related by Kepler's law to the speed of planets and comets.
+\end{tcolorbox}
+
+Area:
+
+\begin{align*}
+  \int_0^{\pi} \frac{1}{2} r^2 d\theta = \frac{1}{2} \int_0^{\pi} (\frac{1}{1 + sin\ \theta})^2 d\theta
+\end{align*}
+
+Let $u = \theta - \pi / 2$. Then $du = d \theta$
+
+When $\theta = 0$, $u = -\pi / 2$. When $\theta = \pi$, $u = \pi / 2$.
+
+Then $sin\ \theta = sin(u + \pi / 2) = cos\ u$
+
+\begin{align*}
+  \frac{1}{2} \int_0^{\pi} (\frac{1}{1 + sin\ \theta})^2 d\ \theta &= \frac{1}{2} \int_{-\pi / 2}^{\pi / 2} (\frac{1}{2cos^2(u / 2)})^2\ du \\
+  &= \frac{1}{2} \int_{-\pi / 2}^{\pi / 2} \frac{1}{4} sec^4(u / 2)\ du \\
+\end{align*}
+
+Let $w = tan(u / 2)$. Then $dw = \frac{1}{2} sec^2(u / 2) \ du$
+
+\begin{align*}
+  \int_{-\pi / 2}^{\pi / 2} sec^4(u / 2)\ du &= \int_{tan(-\pi / 2 / 2)}^{tan(\pi / 2 / 2)} sec^2(u / 2) \cdot sec^2(u / 2) \ du \\
+  &= \int_{-1}^{1} (1 + tan^2(u / 2)) \cdot (2 \cdot \frac{1}{2} sec^2(u / 2)) \ du \\
+  &= \int_{-1}^{1} (1 + w^2) \cdot 2 \ dw \\
+  &= 2 \int_{-1}^{1} 1 + w^2 dw \\
+  &= 2 (w + \frac{w^3}{3}) \bigg]_{-1}^1 \\
+  &= 2 (1 + \frac{1}{3} - (-1 + \frac{(-1)^3}{3})) \\
+  &= 2 (1 + \frac{1}{3} + 1 + \frac{1}{3}) \\
+  &= 2 (2 + \frac{2}{3}) \\
+  &= \frac{16}{3} \\
+  \\
+  \frac{1}{2} \int_{-\pi / 2}^{\pi / 2} \frac{1}{4} sec^4(u / 2)\ du &= \frac{1}{8} \int_{-\pi / 2}^{\pi / 2} sec^4(u / 2)\ du \\
+  &= \frac{1}{8} \cdot \frac{16}{3} \\
+  &= \frac{2}{3}
+\end{align*}
+
 \end{document}
